@@ -1,0 +1,261 @@
+{
+  "id": "p1-u03",
+  "phase": 1,
+  "order": 3,
+  "title": "UTG/MP 开池",
+  "lesson": {
+    "concept": "UTG 是 6 人桌最紧的开池位置：身后还有 5 名玩家，任何边缘牌都要承担被加注或与多人打翻后的风险，所以开池范围仅约 14%——77+、A2s+、KTs+、QTs+、J9s+、T9s、98s、AJo+、KQo。对子与同花牌各有明确底线，非同花被压到极严：只有 AJo+ 与 KQo。MP 少一个身后对手，范围放宽到约 16%：新增 66、KJo、QJo、J8s+、T8s+。同一手牌在两个位置答案可能完全相反（如 66：UTG 弃、MP 开），记范围时务必带上位置。",
+    "rules": [
+      { "id": "p1-u03-R1", "text": "UTG 是 6 人桌最紧的开池位置：身后还有 5 名对手，开池范围约 14%——77+、A2s+、KTs+、QTs+、J9s+、T9s、98s、AJo+、KQo。" },
+      { "id": "p1-u03-R2", "text": "对子有底线：UTG 开到 77+，55 和 66 在 UTG 弃牌；MP 可以开 66。对子越大，翻后越能隔离对手、拿足价值。" },
+      { "id": "p1-u03-R3", "text": "所有同花 A 在 UTG 全部可开（A2s 也是）：同花 A 拥有坚果同花潜力，坚果潜力优先于牌面大小。" },
+      { "id": "p1-u03-R4", "text": "非同花在 UTG 极严：只有 AJo+ 和 KQo 可开，ATo、KJo、QJo 等都弃牌；判断是否同花是评估手牌的第一道分水岭。" },
+      { "id": "p1-u03-R5", "text": "MP 比 UTG 宽：范围放宽到约 16%，新增 66、KJo、QJo、J8s+、T8s+；同一手牌在 UTG 与 MP 的答案可能相反。" }
+    ],
+    "example": "你在 UTG 持 A♠2♠，轮到你首先行动。直觉上 A2 很小，但所有同花 A 都在 UTG 开池范围（规则 R3）：坚果同花潜力优先于牌面大小。而 A♥T♦ 要弃：非同花 A 的底线是 AJo（规则 R4）。判断顺序：先问是否同花，再问是否过门槛；对子则先问是否达到 77。",
+    "advanced": [
+      { "title": "紧范围的骨架为什么是这两类牌", "text": "从组合数学看：UTG 全部 180 种组合里，对子（48 种）加同花牌（84 种）占七成以上。原因在翻后可玩性——同花与对子翻后总有明确的发展路径（听坚果同花、中暗三条），而非同花高张翻后常常只能中顶对祈祷。求解器在最早位置的收敛答案总是“高可玩性优先”，这就是规则 R3“坚果潜力优先于牌面大小”背后的数学根源，也是为什么 A2s 开而 ATo 弃。" },
+      { "title": "RFI 范围的公共模板", "text": "所有位置的开池范围都是同一模板的逐档放宽：对子有下限、同花 A 全包、同花 K/Q/连张各有下限、非同花极少。位置每靠后一格，每条边界各松一档。学后面的位置不用死记全表，只要记住“比前一个位置多了哪几档”——例如 MP = UTG + {66、KJo、QJo、J8s、T8s}。" }
+    ],
+    "pitfalls": [
+      "看到 A 就想开：非同花 ATo 在 UTG 是明确弃牌（规则 R4）。先问是否同花，再问是否过 AJo 门槛，“有 A”不等于“够强”。",
+      "脱离位置背范围：66 在 UTG 弃、在 MP 开（规则 R2、R5）。每个范围必须连同位置标签一起记，否则等于没背。"
+    ],
+    "sources": [
+      { "name": "GTO Wizard 免费翻前解", "url": "https://www.gtowizard.com", "note": "6-max 100bb RFI 范围交叉核对" },
+      { "name": "PokerCoaching 免费翻前图表", "url": "https://pokercoaching.com/preflop-charts/", "note": "Jonathan Little 公开 6-max 100bb 图表" },
+      { "name": "《Modern Poker Theory》（Michael Acevedo）", "note": "范围构建与可玩性优先的 GTO 框架" }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "rfi-utg",
+      "title": "UTG 开池范围 @100bb（6人桌）",
+      "spot": "6人桌现金局，有效筹码 100bb，UTG 第一个行动，前面无人入池，open 2.5bb",
+      "actions": [
+        { "key": "raise", "label": "开池", "hands": ["77", "88", "99", "TT", "JJ", "QQ", "KK", "AA", "A2s", "A3s", "A4s", "A5s", "A6s", "A7s", "A8s", "A9s", "ATs", "AJs", "AQs", "AKs", "KTs", "KJs", "KQs", "QTs", "QJs", "J9s", "JTs", "T9s", "98s", "AJo", "AQo", "AKo", "KQo"] },
+        { "key": "fold", "label": "弃牌", "default": true }
+      ],
+      "note": "占全部组合 13.6%（180/1326），讲解近似为“约 14%”。记忆锚点：对子 77 起、所有同花 A、同花 K/Q 到 KTs/QTs、同花连张只到 98s、非同花只有 AJo+ 与 KQo。",
+      "source": "学习化近似：对照 GTO Wizard 免费翻前解与 PokerCoaching 6-max 100bb 开池图表"
+    },
+    {
+      "id": "rfi-mp",
+      "title": "MP 开池范围 @100bb（6人桌）",
+      "spot": "6人桌现金局，有效筹码 100bb，UTG 已弃牌，MP 行动，open 2.5bb",
+      "actions": [
+        { "key": "raise", "label": "开池", "hands": ["66", "77", "88", "99", "TT", "JJ", "QQ", "KK", "AA", "A2s", "A3s", "A4s", "A5s", "A6s", "A7s", "A8s", "A9s", "ATs", "AJs", "AQs", "AKs", "KTs", "KJs", "KQs", "QTs", "QJs", "J8s", "J9s", "JTs", "T8s", "T9s", "98s", "AJo", "AQo", "AKo", "KQo", "KJo", "QJo"] },
+        { "key": "fold", "label": "弃牌", "default": true }
+      ],
+      "note": "在 UTG 范围上新增 66、KJo、QJo、J8s、T8s，占 16.4%（218/1326）。66 与 J8s 是 UTG/MP 的经典分界牌——点格子找一找它们在哪。",
+      "source": "学习化近似：对照 GTO Wizard 免费翻前解与 PokerCoaching 6-max 100bb 开池图表"
+    }
+  ],
+  "questions": [
+    {
+      "id": "p1-u03-q01",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 7♠7♥，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。77 正好是 UTG 的对子底线（规则 R2：UTG 开到 77+）：翻后有暗三条潜力，也能用较大的对子在翻后持续下注。对照：66 和 55 在 UTG 都要弃。",
+      "ruleRefs": ["p1-u03-R2"],
+      "kp": "pair-floor"
+    },
+    {
+      "id": "p1-u03-q02",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 6♠6♥，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。66 在 UTG 达不到对子底线 77（规则 R2）：率先入池后还要面对 5 名身后玩家，中小对子翻后很难兑现价值。注意同一手 66 在 MP 是开池（规则 R5）——位置决定范围，答案完全相反。",
+      "ruleRefs": ["p1-u03-R2", "p1-u03-R5"],
+      "kp": "pair-floor"
+    },
+    {
+      "id": "p1-u03-q03",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 A♥2♥，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。A2s 属于 A2s+，所有同花 A 在 UTG 全部可开（规则 R3）：坚果同花潜力优先于牌面大小，A2s 还有 5 高顺子（wheel）潜力，在约 14% 的紧范围里依然稳占一席。",
+      "ruleRefs": ["p1-u03-R3"],
+      "kp": "suited-aces"
+    },
+    {
+      "id": "p1-u03-q04",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 A♠T♦，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。非同花 A 的 UTG 底线是 AJo（规则 R4），ATo 差一张踢脚。对照 A2s 却是开的（规则 R3）——是否同花是 UTG 评估手牌的第一道分水岭。",
+      "ruleRefs": ["p1-u03-R4", "p1-u03-R3"],
+      "kp": "offsuit-floor"
+    },
+    {
+      "id": "p1-u03-q05",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 K♠Q♦，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。KQo 是 UTG 仅有的两档可开非同花之一（规则 R4：AJo+、KQo）：K、Q 双高张即使面对紧跟注范围也有足够胜率，且阻挡了对手的部分强牌组合。",
+      "ruleRefs": ["p1-u03-R4"],
+      "kp": "offsuit-floor"
+    },
+    {
+      "id": "p1-u03-q06",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 K♥T♦，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。UTG 非同花只开 AJo+ 与 KQo（规则 R4），KTo 差一整档：身后 5 名对手让踢脚偏弱的非同花 K 极易被主导（被 AK、KQ 压制），长期是亏损开池。",
+      "ruleRefs": ["p1-u03-R4"],
+      "kp": "offsuit-floor"
+    },
+    {
+      "id": "p1-u03-q07",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 9♠8♠，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。98s 在 UTG 同花连张清单内（规则 R1：T9s、98s）：同花连张翻后可玩性高、成牌隐蔽，即使范围只有约 14% 也保留这两档。",
+      "ruleRefs": ["p1-u03-R1"],
+      "kp": "utg-range"
+    },
+    {
+      "id": "p1-u03-q08",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 8♦7♦，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。UTG 的同花连张只到 98s（规则 R1），87s 差一档：范围越紧，连张的底线越高，87s 在 UTG 率先入池胜率不足、翻后也难打。",
+      "ruleRefs": ["p1-u03-R1"],
+      "kp": "utg-range"
+    },
+    {
+      "id": "p1-u03-q09",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 J♠9♠，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。J9s 属于 J9s+（规则 R1），正好是 UTG 同花 J 的底线：同花加隔一张的连张结构，翻后有成对、成顺多条发展路径。",
+      "ruleRefs": ["p1-u03-R1"],
+      "kp": "utg-range"
+    },
+    {
+      "id": "p1-u03-q10",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 J♥8♥，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。UTG 同花 J 的底线是 J9s（规则 R1），J8s 差一挡。注意 J8s 在 MP 是可以开池的（规则 R5：MP 新增 J8s+）——这是 UTG 与 MP 的经典分界牌。",
+      "ruleRefs": ["p1-u03-R1", "p1-u03-R5"],
+      "kp": "utg-range"
+    },
+    {
+      "id": "p1-u03-q11",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 玩家弃牌，你在 MP 持有 6♦6♣。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。MP 只比 UTG 少一个身后对手，对子底线已放宽到 66（规则 R2、规则 R5）：同一手 66 在 UTG 弃、在 MP 开，答案完全相反——位置每松一档，范围就宽一档。",
+      "ruleRefs": ["p1-u03-R2", "p1-u03-R5"],
+      "kp": "mp-range"
+    },
+    {
+      "id": "p1-u03-q12",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 玩家弃牌，你在 MP 持有 K♦J♥。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。KJo 不在 UTG 范围（规则 R4：UTG 非同花只到 AJo+、KQo），但 MP 新增 KJo（规则 R5）：身后对手少一个，非同花双高张的门槛随之下降，KJo 在约 16% 的范围内是盈利开池。",
+      "ruleRefs": ["p1-u03-R4", "p1-u03-R5"],
+      "kp": "mp-range"
+    },
+    {
+      "id": "p1-u03-q13",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 玩家弃牌，你在 MP 持有 Q♠J♦。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。QJo 是 MP 新增的非同花牌（规则 R5），在 UTG 要弃：MP 约 16% 的范围让 QJ 双高张的翻前胜率与可玩性足以盈利率先入池。",
+      "ruleRefs": ["p1-u03-R5"],
+      "kp": "mp-range"
+    },
+    {
+      "id": "p1-u03-q14",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG，轮到你首先行动。以下哪些手牌应该开池？（多选）",
+      "options": ["7♦7♣", "A♦2♦", "K♣T♣", "9♥8♥", "A♣T♠", "5♥5♦", "K♠T♥", "J♦8♦"],
+      "answer": [0, 1, 2, 3],
+      "explanation": "应开：7♦7♣（对子底线 77，规则 R2）、A♦2♦（A2s+，规则 R3）、K♣T♣（KTs+，规则 R1）、9♥8♥（98s，规则 R1）。应弃：A♣T♠（非同花底线 AJo，规则 R4）、5♥5♦（对子不到 77，规则 R2）、K♠T♥（KTo 差一档，规则 R4）、J♦8♦（UTG 同花 J 底线 J9s，规则 R1）。",
+      "ruleRefs": ["p1-u03-R1", "p1-u03-R2", "p1-u03-R3", "p1-u03-R4"],
+      "kp": "utg-range"
+    },
+    {
+      "id": "p1-u03-q15",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG，轮到你首先行动。以下哪些手牌必须弃牌？（多选）",
+      "options": ["A♠2♠", "5♠5♣", "A♥T♣", "K♦T♠", "Q♥J♥", "J♣8♣", "8♠7♠", "Q♦9♦"],
+      "answer": [1, 2, 3, 4, 5, 6, 7],
+      "explanation": "必须弃：5♠5♣（对子底线 77，规则 R2）、A♥T♣ 与 K♦T♠（非同花只开 AJo+、KQo，规则 R4）、Q♥J♥（UTG 非同花无 QJo，规则 R4）、J♣8♣（J9s+，规则 R1）、8♠7♠（同花连张只到 98s，规则 R1）、Q♦9♦（UTG 同花 Q 只到 QTs+，规则 R1）。唯一应开的是 A♠2♠：所有同花 A 在 UTG 永远可开（规则 R3）。",
+      "ruleRefs": ["p1-u03-R1", "p1-u03-R2", "p1-u03-R3", "p1-u03-R4"],
+      "kp": "utg-range"
+    },
+    {
+      "id": "p1-u03-q16",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 手持 J♦8♦，前面无人入池，轮到你首先行动。在范围表中点选这手牌的标准行动。",
+      "spot": "rfi-utg",
+      "hand": "J8s",
+      "answer": "fold",
+      "explanation": "弃牌。UTG 同花 J 的底线是 J9s（规则 R1），J8s 差一挡：在约 14% 的紧范围里没有它的位置。注意在 MP 表中 J8s 已变为开池——对照两张表体会位置如何放宽边界。",
+      "ruleRefs": ["p1-u03-R1", "p1-u03-R5"],
+      "kp": "rfi-range"
+    },
+    {
+      "id": "p1-u03-q17",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 手持 A♣5♣，前面无人入池，轮到你首先行动。在范围表中点选这手牌的标准行动。",
+      "spot": "rfi-utg",
+      "hand": "A5s",
+      "answer": "raise",
+      "explanation": "开池。所有同花 A 在 UTG 全部可开（规则 R3：A2s+），A5s 有坚果同花潜力与 5 高顺子潜力。是否同花是 UTG 评估手牌的第一道分水岭（规则 R4）。",
+      "ruleRefs": ["p1-u03-R3", "p1-u03-R4"],
+      "kp": "rfi-range"
+    },
+    {
+      "id": "p1-u03-q18",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 手持 K♠Q♦，前面无人入池，轮到你首先行动。在范围表中点选这手牌的标准行动。",
+      "spot": "rfi-utg",
+      "hand": "KQo",
+      "answer": "raise",
+      "explanation": "开池。KQo 是 UTG 仅有的两档可开非同花之一（规则 R4：AJo+、KQo）。它不是同花，但双高张的翻前胜率足够，是紧范围里“稀有的非同花牌”。",
+      "ruleRefs": ["p1-u03-R4"],
+      "kp": "rfi-range"
+    },
+    {
+      "id": "p1-u03-q19",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 玩家弃牌，你在 MP 手持 6♥6♦。在范围表中点选这手牌的标准行动。",
+      "spot": "rfi-mp",
+      "hand": "66",
+      "answer": "raise",
+      "explanation": "开池。MP 新增 66（规则 R2、规则 R5）：同一手 66 在 UTG 明确弃牌，在 MP 是标准的范围放宽。点格子时可以在两张表之间切换，找到这条边界。",
+      "ruleRefs": ["p1-u03-R2", "p1-u03-R5"],
+      "kp": "rfi-range"
+    },
+    {
+      "id": "p1-u03-q20",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 玩家弃牌，你在 MP 手持 T♣8♣。在范围表中点选这手牌的标准行动。",
+      "spot": "rfi-mp",
+      "hand": "T8s",
+      "answer": "raise",
+      "explanation": "开池。T8s 是 MP 新增的同花连张（规则 R5：T8s+），在 UTG 属于弃牌：连张底线从 98s 放宽到 T8s，范围从约 14% 扩到约 16%。",
+      "ruleRefs": ["p1-u03-R5", "p1-u03-R1"],
+      "kp": "rfi-range"
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "id": "p1-u05",
+  "phase": 1,
+  "order": 5,
+  "title": "BTN 开池 @100bb",
+  "lesson": {
+    "concept": "BTN 是全桌位置最好的一席：翻后每一条街都最后行动，信息最多、能控底池、能用便宜下注逼对手弃牌。因此 BTN 的开池范围是全桌最宽的约 37% 起手牌（UTG 仅约 14%）。100bb 有效筹码、前面全部弃牌时：所有对子与同花 A 无条件开池；同花牌的门槛远低于非同花（K2s 开而 K8o 弃）；非同花只保留 A8o+、K9o+、Q9o+、J9o+、T9o；A2o–A7o 与 64s 属边缘混合带，本课先按弃处理，先建立清晰边界。",
+    "rules": [
+      { "id": "p1-u05-R1", "text": "对子永远能开：所有对子 22+ 在 BTN 都是盈利开池，小对子依靠隐含赔率与位置弥补翻后牌力。" },
+      { "id": "p1-u05-R2", "text": "同花 A 永远能开：A2s+ 无条件进入开池范围，可玩性远大于牌面大小。" },
+      { "id": "p1-u05-R3", "text": "同花门槛远低于非同花：同花开到 K2s+、Q2s+、J4s+、T6s+、96s+、86s+、76s、65s、54s。" },
+      { "id": "p1-u05-R4", "text": "非同花严格得多：只开 A8o+、K9o+、Q9o+、J9o+、T9o；边缘带 A2o–A7o 与 64s 本课先按弃处理。" },
+      { "id": "p1-u05-R5", "text": "范围宽度由位置决定：BTN 约 37%，UTG 仅约 14%；同一手牌在不同位置答案可能完全相反。" }
+    ],
+    "example": "你在 BTN 持 K♠2♠，前面全部弃牌。直觉上 K2 很小，但 K2s 在必开范围：同花可玩性远高于一张孤立的高张（规则 R3）。而 K♥8♦ 要弃：非同花 K 的底线是 K9o（规则 R4）。判断顺序：先问是否同花，再问是否过门槛。",
+    "advanced": [
+      { "title": "宽范围的骨架：同花牌从高张一路摊到 2", "text": "BTN 490 种组合里同花牌 220 种，占 45%，远高于 UTG 的同花占比。结构上是三条并行底线：A/K/Q 全踢脚同花（A2s+、K2s+、Q2s+）拿坚果潜力；J4s+、T6s+、96s+、86s+ 各留半档拿连张与隔张潜力；76s、65s、54s 三档小连张收底。非同花只剩 16 类高张（192 种）。同花与非同花的数量差，就是“可玩性优先”的量化。" },
+      { "title": "“每少一个身后对手，范围放宽一档”的量化", "text": "UTG→MP→CO→BTN 的开池占比约 14%→16%→25%→37%。每往后挪一格，新增的不是随机牌，而是“上一格最差的可玩牌型”：MP 加 66 与小同花，CO 加 22-55、K9s 与 87s 以下连张，BTN 再把同花 A/K/Q 的踢脚全部拆掉（K2s+、Q2s+）、连张下探到 54s。用这条阶梯记范围，比死记四张表省力，也能随时推出任意一格的边界。" }
+    ],
+    "pitfalls": [
+      "以为 BTN 可以“随便开”：64s、A7o、K8o、85s 在 BTN 依然是弃牌（规则 R3、R4）。宽范围有清晰的骨架，越宽越要守住底线，否则宽范围就变成送钱范围。",
+      "把“同花开到 X”误记成“同花全开”：T6s 是底线、T5s 就弃，96s 开、95s 弃（规则 R3）。同花也要逐档对清单，这是本单元最高频的记错方式。"
+    ],
+    "sources": [
+      { "name": "GTO Wizard 免费翻前解", "url": "https://www.gtowizard.com", "note": "BTN RFI 与宽范围结构交叉核对" },
+      { "name": "holdempro.app 翻前范围工具", "url": "https://holdempro.app/tools/preflop-ranges", "note": "BTN 开池范围的网格化对照" },
+      { "name": "《Applications of No-Limit Hold'em》（Matthew Janda）", "note": "宽范围构建与可玩性优先的逻辑" }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "btn-open",
+      "title": "BTN 开池范围 @100bb（6人桌）",
+      "spot": "6人桌现金局，有效筹码 100bb，UTG/MP/CO 已弃牌，BTN 行动，open 2.5bb",
+      "actions": [
+        { "key": "raise", "label": "开池", "hands": ["22", "33", "44", "55", "66", "77", "88", "99", "TT", "JJ", "QQ", "KK", "AA", "A2s", "A3s", "A4s", "A5s", "A6s", "A7s", "A8s", "A9s", "ATs", "AJs", "AQs", "AKs", "K2s", "K3s", "K4s", "K5s", "K6s", "K7s", "K8s", "K9s", "KTs", "KJs", "KQs", "Q2s", "Q3s", "Q4s", "Q5s", "Q6s", "Q7s", "Q8s", "Q9s", "QTs", "QJs", "J4s", "J5s", "J6s", "J7s", "J8s", "J9s", "JTs", "T6s", "T7s", "T8s", "T9s", "96s", "97s", "98s", "86s", "87s", "76s", "65s", "54s", "A8o", "A9o", "ATo", "AJo", "AQo", "AKo", "K9o", "KTo", "KJo", "KQo", "Q9o", "QTo", "QJo", "J9o", "JTo", "T9o"] },
+        { "key": "fold", "label": "弃牌", "default": true }
+      ],
+      "note": "占全部组合 37.0%（490/1326），讲解近似为“约 37%”。为什么 BTN 能开最宽：身后只剩 SB、BB 两个盲注，被加注与多人底池的压力最小，且翻后每一街都最后行动、信息最多。结构锚点：对子与同花 A 全包；同花 K/Q 全踢脚（K2s+、Q2s+）、J4s+、T6s+、96s+、86s+，连张 76s/65s/54s 收底；非同花严格按 A8o+、K9o+、Q9o+、J9o+、T9o。A2o–A7o 与 64s 属边缘混合带，本课按弃处理。",
+      "source": "学习化近似：对照 GTO Wizard 免费翻前解与 holdempro.app 6-max 100bb 开池图表"
+    }
+  ],
+  "questions": [
+    {
+      "id": "p1-u05-q01",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 A♠5♠。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。A5s 属于 A2s+，同花 A 永远能开（规则 R2）：有坚果同花潜力与顺子潜力，可玩性远胜牌面大小。",
+      "ruleRefs": ["p1-u05-R2"],
+      "kp": "suited-ace"
+    },
+    {
+      "id": "p1-u05-q02",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 K♠2♠。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。反直觉题：K2s 开而 K8o 弃（规则 R3）。同花 K 的门槛低到 K2s——同花可玩性比一张高张更重要，这是本单元最高频的错误点。",
+      "ruleRefs": ["p1-u05-R3"],
+      "kp": "suited-vs-offsuit"
+    },
+    {
+      "id": "p1-u05-q03",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 K♥8♦。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。非同花 K 的底线是 K9o（规则 R4），K8o 差一张踢脚。注意对照 K2s 是开的：先问是否同花，再问门槛（规则 R3）。",
+      "ruleRefs": ["p1-u05-R4"],
+      "kp": "suited-vs-offsuit"
+    },
+    {
+      "id": "p1-u05-q04",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 Q♣6♣。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。同花 Q 的门槛低到 Q2s+（规则 R3），Q6s 远在范围内：同花 + 一张高张，翻后有多种成牌路径。",
+      "ruleRefs": ["p1-u05-R3"],
+      "kp": "suited-kicker"
+    },
+    {
+      "id": "p1-u05-q05",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 5♥5♦。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。所有对子 22+ 永远能开（规则 R1）：小对子的价值主要来自隐含赔率——翻后击中暗三条能赢到大底池，而 BTN 的位置让实现这条价值更容易。",
+      "ruleRefs": ["p1-u05-R1"],
+      "kp": "pair-implied-odds"
+    },
+    {
+      "id": "p1-u05-q06",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 A♣7♦。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌（本课口径）。A7o 属于 A2o–A7o 边缘混合带，本课先按弃处理（规则 R4：非同花严格得多，底线 A8o）。这类牌在求解器输出中是低频混合，先建立清晰边界比记混合频率更重要。",
+      "ruleRefs": ["p1-u05-R4"],
+      "kp": "mixed-zone"
+    },
+    {
+      "id": "p1-u05-q07",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 9♦7♣。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。非同花连张的底线是 T9o（规则 R4），97o 不够。同理花连张 97s 却是开的（96s+，规则 R3）——再次印证同花与非同花的门槛差距。",
+      "ruleRefs": ["p1-u05-R4"],
+      "kp": "offsuit-baseline"
+    },
+    {
+      "id": "p1-u05-q08",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 J♠4♠。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。J4s 正好是同花 J 的必开底线 J4s+（规则 R3），属于边界记忆点。对照：非同花 J 的底线是 J9o（规则 R4），差距悬殊。",
+      "ruleRefs": ["p1-u05-R3"],
+      "kp": "suited-baseline"
+    },
+    {
+      "id": "p1-u05-q09",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 K♠9♦，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。同一手牌换位置答案相反（规则 R5）：K9o 在 BTN 是开池底线，但 UTG 范围仅约 14%，K9o 太弱，无法对抗身后 5 名玩家率先入池。",
+      "ruleRefs": ["p1-u05-R5"],
+      "kp": "position-width"
+    },
+    {
+      "id": "p1-u05-q10",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，你在 UTG 持有 A♦5♦，轮到你首先行动。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。A5s 的可玩性（同花、连张、阻挡 AA）远胜牌面大小，即使在 UTG 约 15% 的紧缩范围里依然开池（规则 R2、规则 R5）。",
+      "ruleRefs": ["p1-u05-R2", "p1-u05-R5"],
+      "kp": "position-width"
+    },
+    {
+      "id": "p1-u05-q11",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 8♠6♠。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。86s 在同花连张/隔张清单 86s+ 内（规则 R3），且在 BTN 有约 37% 的宽范围支撑。这类中小同花连张翻后可玩性高、隐蔽性强。",
+      "ruleRefs": ["p1-u05-R3"],
+      "kp": "suited-connector"
+    },
+    {
+      "id": "p1-u05-q12",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 2♣2♦。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。规则 R1：对子永远能开，22 也不例外。最小对子翻后主要指望击中暗三条的隐含赔率，BTN 位置让三条的价值最容易兑现。",
+      "ruleRefs": ["p1-u05-R1"],
+      "kp": "pair-implied-odds"
+    },
+    {
+      "id": "p1-u05-q13",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN 持有 Q♥9♦。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。Q9o 是非同花 Q 的精确底线（规则 R4：Q9o+），差一张踢脚的 Q8o 就弃。边界牌建议连同对照牌一起记忆。",
+      "ruleRefs": ["p1-u05-R4"],
+      "kp": "offsuit-baseline"
+    },
+    {
+      "id": "p1-u05-q14",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN。以下哪些手牌应该开池？（多选）",
+      "options": ["K♠2♠", "A♦7♦", "5♥5♦", "J♠4♠", "K♥8♦", "9♦7♣", "A♣7♦", "Q♣6♣"],
+      "answer": [0, 1, 2, 3, 7],
+      "explanation": "应开：K♠2♠（K2s+，规则 R3）、A♦7♦（同花 A 永远开，规则 R2）、5♥5♦（对子永远开，规则 R1）、J♠4♠（J4s+，规则 R3）、Q♣6♣（Q2s+，规则 R3）。应弃：K♥8♦（非同花 K 底线 K9o，规则 R4）、9♦7♣（非同花连张底线 T9o，规则 R4）、A♣7♦（A2o–A7o 边缘带先按弃，规则 R4）。",
+      "ruleRefs": ["p1-u05-R1", "p1-u05-R2", "p1-u05-R3", "p1-u05-R4"],
+      "kp": "range-overview"
+    },
+    {
+      "id": "p1-u05-q15",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 BTN。以下哪些手牌应该开池？（多选）",
+      "options": ["A♠2♠", "T♠6♠", "8♠6♠", "7♥6♥", "A♥8♥", "T♦9♣", "Q♥9♦", "6♥4♥"],
+      "answer": [0, 1, 2, 3, 4, 5, 6],
+      "explanation": "前七项全部应开：A♠2♠（规则 R2）；T♠6♠、8♠6♠（96s+/86s+，规则 R3）；7♥6♥（76s，规则 R3）；A♥8♥、T♦9♣、Q♥9♦ 分别是非同花 A/K 之前的三条底线 A8o、T9o、Q9o（规则 R4）。唯一应弃的是 6♥4♥：64s 属边缘混合带，本课先按弃处理（规则 R4）。",
+      "ruleRefs": ["p1-u05-R2", "p1-u05-R3", "p1-u05-R4"],
+      "kp": "range-overview"
+    },
+    {
+      "id": "p1-u05-q16",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG/MP/CO 玩家弃牌，你在 BTN 手持 A♦2♦。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-open",
+      "hand": "A2s",
+      "answer": "raise",
+      "explanation": "开池。A2s 属于 A2s+，同花 A 在 BTN 永远能开（规则 R2）：哪怕踢脚最小，坚果同花与 5 高顺子的潜力也让它稳居约 37% 宽范围的核心。弱同花 A 正是 BTN 相对前位放宽最多的一类牌——UTG 开它靠坚果潜力，BTN 开它连成本都更低。",
+      "ruleRefs": ["p1-u05-R2"],
+      "kp": "btn-range"
+    },
+    {
+      "id": "p1-u05-q17",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG/MP/CO 玩家弃牌，你在 BTN 手持 Q♥8♦。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-open",
+      "hand": "Q8o",
+      "answer": "fold",
+      "explanation": "弃牌。非同花 Q 的底线是 Q9o+（规则 R4），Q8o 差一张踢脚，即使在 BTN 的宽范围里也没有它的位置。对照第 13 题的 Q9o：边界就卡在踢脚这一档——边界牌请连同它的“对照邻居”一起记。",
+      "ruleRefs": ["p1-u05-R4"],
+      "kp": "btn-range"
+    },
+    {
+      "id": "p1-u05-q18",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG/MP/CO 玩家弃牌，你在 BTN 手持 8♠5♠。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-open",
+      "hand": "85s",
+      "answer": "fold",
+      "explanation": "弃牌。同花 8 的底线是 86s+（规则 R3），85s 差一挡——同花不是 BTN 的万能通行证：底线之上全包（K2s+、Q2s+），底线之下的 85s、95s、T5s 与非同花一起弃。先对清单，再点格子。",
+      "ruleRefs": ["p1-u05-R3"],
+      "kp": "btn-range"
+    },
+    {
+      "id": "p1-u05-q19",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG/MP/CO 玩家弃牌，你在 BTN 手持 K♦9♣。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-open",
+      "hand": "K9o",
+      "answer": "raise",
+      "explanation": "开池。K9o 是非同花 K 的精确底线 K9o+（规则 R4），差一张踢脚的 K8o 就弃。这也是 CO/BTN 的分界牌：对照 p1-u04 的 CO 表，同一手 K9o 在 CO 达不到 KTo+ 要弃，到 BTN 变为开池——位置的宽度阶梯（规则 R5）在这一格里把门槛下移了一档。",
+      "ruleRefs": ["p1-u05-R4", "p1-u05-R5"],
+      "kp": "btn-range"
+    },
+    {
+      "id": "p1-u05-q20",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG/MP/CO 玩家弃牌，你在 BTN 手持 6♥5♥。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-open",
+      "hand": "65s",
+      "answer": "raise",
+      "explanation": "开池。65s 在同花连张清单 76s、65s、54s 内（规则 R3）：这类小同花连张是 BTN 宽范围特有的骨干牌——UTG/MP 直接弃、CO 已可开，到 BTN 的约 37% 里它们是标准盈利开池。价值来自顺子与同花的双重隐蔽成牌，这是位置阶梯（规则 R5）给到宽范围的红利。",
+      "ruleRefs": ["p1-u05-R3", "p1-u05-R5"],
+      "kp": "btn-range"
+    }
+  ]
+}

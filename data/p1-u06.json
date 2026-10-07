@@ -1,0 +1,209 @@
+{
+  "id": "p1-u06",
+  "phase": 1,
+  "order": 6,
+  "title": "SB 策略",
+  "lesson": {
+    "concept": "SB 翻前只剩 BB 一个对手、最后行动，看似大利好；但翻后无论哪一条街 BB 都在你身后行动，你永远位置最差。一得一失相抵，SB 开池宽度约 32%，略窄于 BTN。100bb 有效筹码、全部弃到 SB 时：开池范围 22+、A2s+、K2s+、Q6s+、J7s+、T7s+、97s+、87s、A8o+、K9o+、Q9o+、J9o+、T9o，其余全部弃。有人 limp 时：强牌（AJo+/88+/ATs+）隔离加注到 3bb 再加每个 limp 1bb，把 limper 单独留下打一对一；投机牌（小对子、同花连张）可跟注便宜看翻牌；垃圾直接弃。新手阶段只加注或弃牌，不 limp。",
+    "rules": [
+      { "id": "p1-u06-R1", "text": "一得一失定宽度：SB 只剩 BB 一个对手（利好），但翻后将永远位置最差、BB 在你身后行动（利空），两者相抵开池约 32%，略窄于 BTN。范围：22+、A2s+、K2s+、Q6s+、J7s+、T7s+、97s+、87s、A8o+、K9o+、Q9o+、J9o+、T9o。" },
+      { "id": "p1-u06-R2", "text": "新手简化策略：SB 只加注或弃牌，绝不 open-limp；平衡的 limp 策略以后再学。" },
+      { "id": "p1-u06-R3", "text": "开池底线对照：K2s、A8o 可开；Q5s、T6s、95s、K8o 弃——同花从宽、非同花从严。" },
+      { "id": "p1-u06-R4", "text": "面对 limp：强牌（AJo+/88+/ATs+）隔离加注到 3bb 加每个 limp 1bb，把 limper 单独留下打一对一；投机牌（小对子、同花连张）可跟注便宜看翻牌；垃圾直接弃牌。" }
+    ],
+    "example": "你在 SB 持 K♥2♥，前面全部弃牌。只剩 BB 一个对手让你能宽开，但翻后他永远在你身后行动（规则 R1），两件事相抵后 K2s 仍在开池范围内（规则 R3）。换一手：UTG limp 后你在 SB 持 A♦J♣，这是 AJo+ 强牌，隔离加注到 3+1=4bb，既做大底池又把 limper 单独留下打一对一（规则 R4）。若你拿的是 5♣5♦，只是便宜跟注看翻牌，不隔离。",
+    "advanced": [
+      { "title": "一得一失的数学：32.4% 介于 BTN 与前位之间", "text": "SB 翻前只对 BB 一个未行动对手，偷盲成功率天然高；但翻后 BB 永远在你身后行动，你得用差位置打每一街。两者相抵，SB 开池 430 种组合（32.4%），比 BTN（37.0%）窄、远宽于 CO（24.9%）。结构上收窄的全部是同花牌：非同花部分与 BTN 完全一样（A8o+、K9o+、Q9o+、J9o+、T9o），同花则从 Q2s 收到 Q6s、J4s 收到 J7s、连张砍掉 76s/65s/54s——差位置用更干净的翻后牌型来补偿。" },
+      { "title": "GTO 里有 limp，本课为什么不用", "text": "求解器的 SB 翻前策略是 raise 与 limp 的精细混合：limp 用 1bb 保住弱同花牌的可玩性，并保留对 BB 加注做 3-bet 的选项。但 limp 同时放弃主动权、让 BB 免费实现底池权益，且新手最容易在“limp-遇加注”的节点崩盘。规则 R2 的“只加注或弃牌”是收敛更快、被剥削更少的起点；limp 的收益建立在读牌与完整的后续计划上，属于进阶内容，范围表里它的占比为 0%。" }
+    ],
+    "pitfalls": [
+      "把 SB 当 BTN 用：翻前最后行动不等于翻后有位置，SB 翻后每一街都先行动（规则 R1）。54s、76s 这类 BTN 的连张在 SB 是弃牌，别把 BTN 的宽表搬过来。",
+      "忘记隔离加注的尺度公式：3bb 起步、每个 limper 加 1bb（规则 R4）。尺度不足等于邀请 BB 与 limper 廉价进池，尺度离谱又在浪费价值。"
+    ],
+    "sources": [
+      { "name": "GTO Wizard 免费翻前解", "url": "https://www.gtowizard.com", "note": "SB 单挑大盲局面的 raise/limp 结构对照" },
+      { "name": "Upswing Poker 免费翻前图表", "url": "https://www.upswingpoker.com/preflop-charts/", "note": "SB 开池与隔离加注尺度参考" },
+      { "name": "《Modern Poker Theory》（Michael Acevedo）", "note": "SB 位置矛盾与范围收紧的数学解释" }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "sb-vs-bb",
+      "title": "SB 开池范围 @100bb（6人桌，vs BB）",
+      "spot": "6人桌现金局，有效筹码 100bb，前面全部弃牌到 SB，只剩 BB 未行动，open 2.5bb",
+      "actions": [
+        { "key": "raise", "label": "开池", "hands": ["22", "33", "44", "55", "66", "77", "88", "99", "TT", "JJ", "QQ", "KK", "AA", "A2s", "A3s", "A4s", "A5s", "A6s", "A7s", "A8s", "A9s", "ATs", "AJs", "AQs", "AKs", "K2s", "K3s", "K4s", "K5s", "K6s", "K7s", "K8s", "K9s", "KTs", "KJs", "KQs", "Q6s", "Q7s", "Q8s", "Q9s", "QTs", "QJs", "J7s", "J8s", "J9s", "JTs", "T7s", "T8s", "T9s", "97s", "98s", "87s", "A8o", "A9o", "ATo", "AJo", "AQo", "AKo", "K9o", "KTo", "KJo", "KQo", "Q9o", "QTo", "QJo", "J9o", "JTo", "T9o"] },
+        { "key": "limp", "label": "跛入", "hands": [] },
+        { "key": "fold", "label": "弃牌", "default": true }
+      ],
+      "note": "加注部分占全部组合 32.4%（430/1326），讲解近似为“约 32%”。SB 的矛盾结构：翻前只剩 BB 一个对手（该宽），但翻后永远最先行动、位置最差（该紧），相抵后比 BTN 窄、比 CO 宽。收窄的全部是同花牌：非同花与 BTN 相同，同花从 Q6s+、J7s+、T7s+ 起，连张只剩 97s+ 与 87s。limp 行动占比为 0%——本课按规则 R2 采用“只加注或弃牌”的简化策略，平衡的 limp 策略在进阶课程再学。",
+      "source": "学习化近似：对照 GTO Wizard 免费翻前解与 Upswing 6-max 100bb 开池图表"
+    }
+  ],
+  "questions": [
+    {
+      "id": "p1-u06-q01",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 K♥2♥。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。SB 只剩 BB 一个对手，K2s 在同花 K 范围 K2s+ 内（规则 R1、规则 R3）：同花可玩性远胜牌面大小。别被'K2 太小'的直觉带偏——先问是否同花，再问门槛（规则 R3）。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-rfi"
+    },
+    {
+      "id": "p1-u06-q02",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 Q♠6♠。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。Q6s 正好是同花 Q 的精确底线 Q6s+（规则 R1）：同花 + 高张，翻后成牌路径多。对照 BTN 的同花 Q 放宽到 Q2s+，SB 明显更严（规则 R1）——差一档的 Q5s 就弃（规则 R3）。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-rfi"
+    },
+    {
+      "id": "p1-u06-q03",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 T♥7♥。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。T7s 是同花 T 的精确底线 T7s+（规则 R1）：连张结构好，击中顺子或同花都有隐蔽性。隔一张的 T6s 就弃（规则 R3），边界牌请连对照一起记。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-rfi"
+    },
+    {
+      "id": "p1-u06-q04",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 A♦8♣。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。A8o 是非同花 A 的精确底线 A8o+（规则 R1、规则 R3），差一张踢脚的 A7o 就弃。注意：SB 的非同花部分与 BTN 完全相同（A8o+、K9o+、Q9o+、J9o+、T9o），SB 比 BTN 窄的部分全部来自同花牌（规则 R1）。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-rfi"
+    },
+    {
+      "id": "p1-u06-q05",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 9♠5♠。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。SB 的同花连张底线是 97s+（规则 R1），95s 隔两张、成牌路径太窄（规则 R3 的弃牌对照组）。'同花连张'四个字不能代替门槛——先数点数与间隔，再决定开弃。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-rfi"
+    },
+    {
+      "id": "p1-u06-q06",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 K♦8♣。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。非同花 K 的底线是 K9o+（规则 R1），K8o 差一张踢脚（规则 R3 的弃牌对照组）。对照记忆：K2s 开而 K8o 弃——同花与非同花的门槛差距悬殊，先问是否同花。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-rfi"
+    },
+    {
+      "id": "p1-u06-q07",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 8♣7♣。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。87s 是 SB 同花连张的最低一档（97s+ 之外的 87s，规则 R1）：前面全弃只剩一个对手，87s 的顺子同花双重潜力足以盈利开池。代价是翻后永远位置最差，两者相抵后仍在范围内（规则 R1）。",
+      "ruleRefs": ["p1-u06-R1"],
+      "kp": "one-opponent"
+    },
+    {
+      "id": "p1-u06-q08",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 J♦7♦。是否开池？",
+      "options": ["开池", "弃牌"],
+      "answer": 0,
+      "explanation": "开池。J7s 是同花 J 的精确底线 J7s+（规则 R1）：高张 + 同花 + 一定顺子潜力。差一张的 J6s 就弃（规则 R3）；对照 BTN 的同花 J 放宽到 J4s+，SB 收窄了 J4s–J6s 三档（规则 R1）。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-rfi"
+    },
+    {
+      "id": "p1-u06-q09",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 持有 5♠4♠。关于这手牌在 BTN 与 SB 的开池选择，正确的是？",
+      "options": ["两个位置都开池", "只在 BTN 开池，SB 弃牌", "只在 SB 开池，BTN 弃牌", "两个位置都弃牌"],
+      "answer": 1,
+      "explanation": "只在 BTN 开池。54s 在 BTN 属于 65s/54s 可开（参照 p1-u05 的范围），但 SB 的同花连张止于 87s、97s+（规则 R1），54s 在 SB 要弃。SB 比 BTN 窄的部分正是这类低同花连张与小同花牌（规则 R1）——位置优势减少，范围就收紧。",
+      "ruleRefs": ["p1-u06-R1"],
+      "kp": "position-tradeoff"
+    },
+    {
+      "id": "p1-u06-q10",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 玩家率先 limp 入池（共 1 名 limper），BB 尚未行动，你在 SB 持有 A♦Q♣。应如何行动？",
+      "options": ["跟注 1bb", "加注到 3bb", "加注到 4bb", "加注到 6bb"],
+      "answer": 2,
+      "explanation": "加注到 4bb。AQo 属于 AJo+ 强牌，应隔离加注打一对一（规则 R4）：尺度 = 3bb 加每个 limp 1bb，1 名 limper 即 3+1=4bb。不要只跟注——那会让 BB 以好价格一起进池。若换成 3 名 limper，则加到 3+3=6bb（规则 R4）。",
+      "ruleRefs": ["p1-u06-R4"],
+      "kp": "iso-raise"
+    },
+    {
+      "id": "p1-u06-q11",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB。以下哪些手牌应该开池？（多选）",
+      "options": ["A♥3♥", "7♠6♠", "Q♦5♦", "3♦3♣", "J♠6♠", "K♦4♦", "A♣7♥", "9♥8♥"],
+      "answer": [0, 3, 5, 7],
+      "explanation": "应开：A♥3♥（A2s+，规则 R1）、3♦3♣（22+，规则 R1）、K♦4♦（K2s+，规则 R1）、9♥8♥（97s+，规则 R1）。应弃：7♠6♠（SB 同花连张止于 87s，规则 R1；注意它在 BTN 是开的）、Q♦5♦（同花 Q 底线 Q6s+，规则 R3）、J♠6♠（同花 J 底线 J7s+，规则 R1）、A♣7♥（非同花 A 底线 A8o+，规则 R3）。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-rfi"
+    },
+    {
+      "id": "p1-u06-q12",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，MP 玩家率先 limp 入池（共 1 名 limper），BB 尚未行动，你在 SB。以下哪些手牌应该隔离加注？（多选）",
+      "options": ["A♦J♣", "5♣5♦", "8♥8♦", "K♥3♦", "6♥7♥", "A♠T♠", "J♥5♦", "J♠T♠"],
+      "answer": [0, 2, 5],
+      "explanation": "应隔离加注：A♦J♣（AJo+）、8♥8♦（88+）、A♠T♠（ATs+），均属强牌，按 3+1=4bb 加注把 limper 单独留下（规则 R4）。其余不是隔离牌：5♣5♦、6♥7♥、J♠T♠ 是投机牌（小对子、同花连张），便宜跟注看翻牌即可（规则 R4）；K♥3♦、J♥5♦ 是垃圾，直接弃（规则 R4）。",
+      "ruleRefs": ["p1-u06-R4"],
+      "kp": "iso-raise"
+    },
+    {
+      "id": "p1-u06-q13",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 手持 Q♠5♠。在范围表中点选这手牌的标准行动。",
+      "spot": "sb-vs-bb",
+      "hand": "Q5s",
+      "answer": "fold",
+      "explanation": "弃牌。SB 同花 Q 的底线是 Q6s+（规则 R1；规则 R3 的弃牌对照组里就有 Q5s），差一挡：翻后将永远位置最差，SB 用收紧同花门槛来补偿（规则 R1）。对照第 2 题的 Q6s——边界就隔一张踢脚。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-range"
+    },
+    {
+      "id": "p1-u06-q14",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 手持 8♣7♣。在范围表中点选这手牌的标准行动。",
+      "spot": "sb-vs-bb",
+      "hand": "87s",
+      "answer": "raise",
+      "explanation": "开池。87s 是 SB 连张清单的最低一档（97s+ 之外的 87s，规则 R1）：翻前只剩 BB 一个对手，87s 的顺子同花双重潜力足以盈利开池；代价是翻后位置最差，两件事相抵后它仍留在约 32% 的范围里。",
+      "ruleRefs": ["p1-u06-R1"],
+      "kp": "sb-range"
+    },
+    {
+      "id": "p1-u06-q15",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 手持 A♦8♣。在范围表中点选这手牌的标准行动。",
+      "spot": "sb-vs-bb",
+      "hand": "A8o",
+      "answer": "raise",
+      "explanation": "开池。A8o 是非同花 A 的精确底线 A8o+（规则 R1；规则 R3 的开池对照组），差一张踢脚的 A7o 就弃。SB 的非同花部分与 BTN 完全相同——差位置并没有压低高张的翻前价值，收窄的全部是同花牌（规则 R1）。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R3"],
+      "kp": "sb-range"
+    },
+    {
+      "id": "p1-u06-q16",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，前面玩家全部弃牌，你在 SB 手持 7♥6♥。在范围表中点选这手牌的标准行动。",
+      "spot": "sb-vs-bb",
+      "hand": "76s",
+      "answer": "fold",
+      "explanation": "弃牌。SB 的同花连张止于 87s 与 97s+（规则 R1），76s 差一档：对照 p1-u05 的 BTN 表，76s 在那里是标准开池——SB 比 BTN 窄的部分正是这类小连张与小同花牌（规则 R1 的一得一失）。本表 limp 行动占比为 0（规则 R2 只加注或弃牌），本单元的范围题答案只有开池与弃牌两种。",
+      "ruleRefs": ["p1-u06-R1", "p1-u06-R2"],
+      "kp": "sb-range"
+    }
+  ]
+}

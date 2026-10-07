@@ -1,0 +1,251 @@
+{
+  "id": "p1-u07",
+  "phase": 1,
+  "order": 7,
+  "title": "BB 防守",
+  "lesson": {
+    "concept": "大盲已投 1bb 盲注且翻前最后行动：面对 BTN 2.5bb 开池只需补 1.5bb 看约 6bb 底池，胜率仅需约 25%–27%。折扣让 BB 能极宽防守——vs BTN 约 45%：所有对子 22+、几乎所有同花牌（A2s+、K2s+、Q2s+、J4s+、T6s+、96s+、86s+、76s、65s、54s）、不差非同花（A2o+、K8o+、Q8o+、J8o+、T8o+）。防守以跟注为主，兼配 3bet：价值用 TT+、AQ+；诈唬用同花 A2s–A5s 与同花 broadway（Q9s+、K8s–KTs）；72o、83o 等纯垃圾直接弃。对手越宽、尺度越小，防守越宽。",
+    "rules": [
+      { "id": "p1-u07-R1", "text": "大盲已投 1bb，跟注有折扣：面对 2.5bb 开池只需补 1.5bb 就能看约 6bb 底池，所需胜率仅约 25%–27%，因此可以极宽防守（vs BTN 约 45%）。" },
+      { "id": "p1-u07-R2", "text": "跟注范围：所有对子 22+、几乎所有同花牌（A2s+、K2s+、Q2s+、J4s+、T6s+、96s+、86s+、76s、65s、54s），以及不差的非同花 A2o+、K8o+、Q8o+、J8o+、T8o+。" },
+      { "id": "p1-u07-R3", "text": "价值 3bet：TT+ 和 AQ+；更好的大牌（如 AA、KK）跟注保留也行。" },
+      { "id": "p1-u07-R4", "text": "诈唬 3bet 选同花 A2s–A5s 与部分同花 broadway（Q9s+、K8s–KTs）；纯垃圾（72o、83o）直接弃。" },
+      { "id": "p1-u07-R5", "text": "对手开池越宽、尺度越小，你防守越宽；面对紧的或更大尺度的开池则相应收紧。" }
+    ],
+    "example": "你在 BB 持 K♠2♠，BTN 开池 2.5bb，SB 弃牌，你只需补 1.5bb。直觉上 K2 很小，但 K2s 在跟注范围的同花清单内（规则 R2），且 1.5bb 看约 6bb 底池的折扣让边缘牌足以防守（规则 R1）。而 7♣2♦ 要弃：纯垃圾在任何折扣下都不值得（规则 R4）。判断顺序：先算折扣，再问牌是否过跟注门槛。",
+    "advanced": [
+      { "title": "closing the action：BB 独享的折扣", "text": "其他位置平跟后身后还可能有人 3bet 挤压，实际权益大打折扣；BB 翻前最后行动，跟注后保证看到翻牌——这就是 closing the action。你已投 1bb，实际风险只有 1.5bb：看约 5.5bb 底池（含 SB 死钱），赔率约 2.7:1，所需胜率仅约 27%；而同样一手牌在 BTN 平跟，所需权益接近 40%。规则 R1“约 25%–27%”的全部底气来自这里。" },
+      { "title": "过紧与过宽的平衡", "text": "对手 BTN 开 2.5bb 偷 1.5bb 死钱，弃牌率达到 62.5% 他就能自动盈利——防守不足等于长期送盲注（规则 R5 越宽越守的另一面）。但防守也不是无底线：72o 这类牌翻后实现率连约 27% 都够不到，补进来纯送（规则 R4）。求解器把 BB 防守定在约 45% 正是这两股力量的交点：宽度全部由过门槛的牌组成。" }
+    ],
+    "pitfalls": [
+      "拿开池标准套 BB：K2s 率先开池是弃牌，在 BB 面对 BTN 却是标准跟注（规则 R1、R2）——折扣已把整条底线下移。每次评估 BB 手牌，先算“只需补多少”，再对照门槛。",
+      "把“防守宽”理解成“什么都补”：72o、83o 在任何折扣下都是弃牌（规则 R4）。约 45% 的防守宽度全部由过门槛的牌组成，垃圾牌补进来只是把输 1bb 变成输 2.5bb。"
+    ],
+    "sources": [
+      { "name": "GTO Wizard 免费翻前解", "url": "https://www.gtowizard.com", "note": "BB vs BTN 防守范围交叉核对" },
+      { "name": "PokerCoaching 免费翻前图表", "url": "https://pokercoaching.com/preflop-charts/", "note": "6-max 100bb 大盲防守图表" },
+      { "name": "《Modern Poker Theory》（Michael Acevedo）", "note": "盲注防守、底池赔率与最低防守频率框架" }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "bb-vs-btn-open",
+      "title": "BB 防守范围 vs BTN 开池 @100bb（6人桌）",
+      "spot": "6人桌现金局，有效筹码 100bb，BTN 开池 2.5bb，SB 弃牌，你在 BB 已投 1bb 大盲，只需补 1.5bb",
+      "actions": [
+        { "key": "call", "label": "跟注", "hands": ["22", "33", "44", "55", "66", "77", "88", "99", "A6s", "A7s", "A8s", "A9s", "ATs", "AJs", "K2s", "K3s", "K4s", "K5s", "K6s", "K7s", "KJs", "KQs", "Q2s", "Q3s", "Q4s", "Q5s", "Q6s", "Q7s", "Q8s", "J4s", "J5s", "J6s", "J7s", "J8s", "J9s", "JTs", "T6s", "T7s", "T8s", "T9s", "96s", "97s", "98s", "86s", "87s", "76s", "65s", "54s", "A2o", "A3o", "A4o", "A5o", "A6o", "A7o", "A8o", "A9o", "ATo", "AJo", "K8o", "K9o", "KTo", "KJo", "KQo", "Q8o", "Q9o", "QTo", "QJo", "J8o", "J9o", "JTo", "T8o", "T9o"] },
+        { "key": "3bet", "label": "3bet", "hands": ["TT", "JJ", "QQ", "KK", "AA", "AQs", "AKs", "AQo", "AKo", "A2s", "A3s", "A4s", "A5s", "K8s", "K9s", "KTs", "Q9s", "QTs", "QJs"] },
+        { "key": "fold", "label": "弃牌", "default": true }
+      ],
+      "note": "跟注 496 种组合占 37.4%，3bet 102 种占 7.7%，合计防守 598 种 = 45.1%（讲解口径“约 45%”）。规则 R2 跟注清单里被 R3/R4 选中做 3bet 的牌（TT+、AQ+、A2s–A5s、K8s–KTs、Q9s+）本表归入 3bet 栏、不重复列入跟注栏。记忆锚点：所有对子都防守（TT 以上 3bet）、同花几乎全防守、非同花底线 A2o+/K8o+/Q8o+/J8o+/T8o+；72o、83o 纯垃圾弃。",
+      "source": "学习化近似：对照 GTO Wizard 免费翻前解 / PokerCoaching 6-max 100bb 大盲防守图表"
+    }
+  ],
+  "questions": [
+    {
+      "id": "p1-u07-q01",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 7♣2♦。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。虽然只需补 1.5bb，但 72o 与任何开池范围相性都极差：不成牌几乎必输，成了对子踢脚也烂，长期连这 1.5bb 都是负 EV（规则 R4：纯垃圾直接弃）。它一项都跟注门槛都不满足（规则 R2）。",
+      "ruleRefs": ["p1-u07-R2", "p1-u07-R4"],
+      "kp": "bb-defense"
+    },
+    {
+      "id": "p1-u07-q02",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 K♠2♠。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "跟注。K2s 在跟注范围的同花清单 K2s+ 内（规则 R2），而 1.5bb 看约 6bb 底池的折扣让这类弱同花牌足以防守（规则 R1）。这是本单元最高频的错误点——别忘了你已投入的 1bb 盲注。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "bb-defense"
+    },
+    {
+      "id": "p1-u07-q03",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 A♦2♣。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "跟注。非同花 A 的跟注底线低到 A2o+（规则 R2），A2o 远在范围内：有顶对潜力和顺子潜力，而所需胜率只要约 25%–27%（规则 R1）。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "bb-defense"
+    },
+    {
+      "id": "p1-u07-q04",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 Q♥8♦。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "跟注。Q8o 正好是非同花 Q 的跟注底线 Q8o+（规则 R2），差一张踢脚的 Q7o 才弃。折扣（规则 R1）让这类边缘非同花高张足以防守。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "bb-defense"
+    },
+    {
+      "id": "p1-u07-q05",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 T♠8♣。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "跟注。T8o 正好是非同花跟注清单的最后一条底线 T8o+（规则 R2），T7o 及以下要弃。1.5bb 看约 6bb 底池（规则 R1）意味着很一般的翻后实现率就够本。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "bb-defense"
+    },
+    {
+      "id": "p1-u07-q06",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 5♠4♠。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "跟注。54s 在同花连张清单内（规则 R2），且小连张在宽防守范围里隐蔽性强、翻后可玩性高。价值主要来自折扣（规则 R1）：投入成本低，中顺子后的赔付高。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "bb-defense"
+    },
+    {
+      "id": "p1-u07-q07",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 K♦8♥。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "跟注。K8o 正好是非同花 K 的跟注底线 K8o+（规则 R2），K7o 才弃。别用开池标准衡量 BB 防守——折扣让整条底线整体下移（规则 R1）。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "bb-defense"
+    },
+    {
+      "id": "p1-u07-q08",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 9♠8♠。你只需补 1.5bb，跟注后底池约 5.5–6bb。这次跟注所需的最小胜率约为多少？",
+      "options": ["约 15%", "约 25%", "约 40%", "约 55%"],
+      "answer": 1,
+      "explanation": "所需胜率 = 跟注额 ÷ 跟注后底池 = 1.5 ÷ 5.5 ≈ 27%，最接近约 25%（规则 R1）；用约 6bb 估算也是 1.5 ÷ 6 = 25%。这正是 BB 能宽防守的数学基础：门槛远低于通常认为的 50%。",
+      "ruleRefs": ["p1-u07-R1"],
+      "kp": "pot-odds-discount"
+    },
+    {
+      "id": "p1-u07-q09",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 A♣Q♦。如何行动？",
+      "options": ["3bet", "跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "3bet。AQ+ 与 TT+ 构成价值 3bet 范围（规则 R3），AQ 正好是底线。面对 BTN 的宽开池，用 3bet 拒绝其部分底池权益并立即建立大底池；跟注也有可玩性，但本课取 3bet 为最优答案。",
+      "ruleRefs": ["p1-u07-R3"],
+      "kp": "value-vs-bluff-3bet"
+    },
+    {
+      "id": "p1-u07-q10",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 2♥2♦。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "跟注。22 在所有对子 22+ 的防守清单内（规则 R2）。赔率已足够好（规则 R1），而且翻后击中暗三条的隐含赔率极高——面对宽开池范围，三条经常拿到超额支付，这正是小对子防守的主要利润来源。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "pot-odds-discount"
+    },
+    {
+      "id": "p1-u07-q11",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 8♥3♦。如何行动？",
+      "options": ["跟注", "弃牌"],
+      "answer": 1,
+      "explanation": "弃牌。83o 与 72o 同类：不成牌必输、成了对子踢脚也烂，纯垃圾直接弃（规则 R4）。折扣再大也不能把零可玩性的牌变成正 EV——它不在任何跟注或 3bet 清单里（规则 R2）。",
+      "ruleRefs": ["p1-u07-R2", "p1-u07-R4"],
+      "kp": "bb-defense"
+    },
+    {
+      "id": "p1-u07-q12",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 持有 A♠5♠。如何行动？",
+      "options": ["3bet", "跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "3bet。A5s 是 A2s–A5s 同花 A 诈唬 3bet 的标准选牌（规则 R4）：有坚果同花与顺子潜力、阻挡 AA，被跟注后翻后仍然可玩。在价值 3bet（规则 R3）之外混入这类诈唬，你的 3bet 范围才平衡。",
+      "ruleRefs": ["p1-u07-R4"],
+      "kp": "value-vs-bluff-3bet"
+    },
+    {
+      "id": "p1-u07-q13",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB。以下哪些手牌应该跟注？（多选）",
+      "options": ["A♠2♦", "Q♠2♠", "Q♦8♥", "5♣4♣", "T♦5♣", "J♠4♠", "T♣8♦", "2♠2♣"],
+      "answer": [0, 1, 2, 3, 5, 6, 7],
+      "explanation": "应跟注：A♠2♦（A2o+，规则 R2）、Q♠2♠（Q2s+，规则 R2）、Q♦8♥（Q8o+，规则 R2）、5♣4♣（54s，规则 R2）、J♠4♠（J4s+，规则 R2）、T♣8♦（T8o+，规则 R2）、2♠2♣（22+，规则 R2）。唯一应弃的是 T♦5♣：非同花 T 的底线是 T8o+，T5o 远不达线。约 45% 的宽防守正是折扣支撑起来的（规则 R1）；面对 BTN 的宽开池这些边缘牌都在防守侧（规则 R5）。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2", "p1-u07-R5"],
+      "kp": "defend-frequency"
+    },
+    {
+      "id": "p1-u07-q14",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB。以下哪些手牌应该 3bet？（多选）",
+      "options": ["A♦Q♣", "J♠J♥", "A♣5♣", "K♠9♠", "Q♠9♠", "A♥8♥", "7♣2♦", "K♦8♣"],
+      "answer": [0, 1, 2, 3, 4],
+      "explanation": "应 3bet：A♦Q♣（AQ+ 价值，规则 R3）、J♠J♥（TT+ 价值，规则 R3）、A♣5♣（A2s–A5s 诈唬，规则 R4）、K♠9♠（K8s–KTs 诈唬，规则 R4）、Q♠9♠（Q9s+ 诈唬，规则 R4）。不应 3bet：A♥8♥ 是标准跟注牌（规则 R2），7♣2♦ 直接弃（规则 R4），K♦8♣ 是跟注牌（K8o+，规则 R2）。",
+      "ruleRefs": ["p1-u07-R2", "p1-u07-R3", "p1-u07-R4"],
+      "kp": "value-vs-bluff-3bet"
+    },
+    {
+      "id": "p1-u07-q15",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB。以下哪些手牌必须弃牌？（多选）",
+      "options": ["7♣2♦", "8♥3♦", "J♦5♣", "9♥5♦", "K♦7♣", "Q♣6♦", "4♣3♥", "A♠9♦"],
+      "answer": [0, 1, 2, 3, 4, 5, 6],
+      "explanation": "必须弃牌：7♣2♦、8♥3♦（纯垃圾，规则 R4）、J♦5♣（非同花 J 底线 J8o+，规则 R2）、9♥5♦（同花 9 要 96s+、非同花底线 T8o+，规则 R2）、K♦7♣（非同花 K 底线 K8o+，规则 R2）、Q♣6♦（非同花 Q 底线 Q8o+，规则 R2）、4♣3♥（同花连张底线 54s，规则 R2）。唯一应跟注的是 A♠9♦：A2o+ 全部跟注（规则 R2）。折扣救不了垃圾牌——约 45% 的宽度全部由过门槛的牌组成（规则 R1）。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2", "p1-u07-R4"],
+      "kp": "defend-frequency"
+    },
+    {
+      "id": "p1-u07-q16",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 手持 A♦9♦。在范围表中点选这手牌的标准行动。",
+      "spot": "bb-vs-btn-open",
+      "hand": "A9s",
+      "answer": "call",
+      "explanation": "跟注。A9s 落在跟注栏：同花 A 的跟注清单是 A2s+（规则 R2），其中 A2s–A5s 被规则 R4 选去做诈唬 3bet、AQ+ 被规则 R3 选去做价值 3bet，中间的 A6s–AJs 全部跟注。只需补 1.5bb 的价格（规则 R1）让这手牌轻松过线。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "bb-defense-range"
+    },
+    {
+      "id": "p1-u07-q17",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 手持 T♠T♦。在范围表中点选这手牌的标准行动。",
+      "spot": "bb-vs-btn-open",
+      "hand": "TT",
+      "answer": "3bet",
+      "explanation": "3bet。TT 是价值 3bet 的底线（规则 R3：TT+、AQ+）：面对 BTN 的宽开池，TT 明显强于其继续跟注的范围，用 3bet 造大底池并拒绝其部分底池权益。注意分界线就在 TT：99 以下回到跟注栏（规则 R2）。",
+      "ruleRefs": ["p1-u07-R3"],
+      "kp": "bb-defense-range"
+    },
+    {
+      "id": "p1-u07-q18",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 手持 J♦5♣。在范围表中点选这手牌的标准行动。",
+      "spot": "bb-vs-btn-open",
+      "hand": "J5o",
+      "answer": "fold",
+      "explanation": "弃牌。J5o 任何清单都进不了：非同花 J 的跟注底线是 J8o+（规则 R2），它既不是 J4s+ 的同花、也不是任何 3bet 候选（规则 R3、规则 R4），落在默认弃牌格。折扣再大也不能把零可玩性的牌变成正 EV（规则 R1）。",
+      "ruleRefs": ["p1-u07-R2", "p1-u07-R4"],
+      "kp": "bb-defense-range"
+    },
+    {
+      "id": "p1-u07-q19",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 手持 K♦J♦。在范围表中点选这手牌的标准行动。",
+      "spot": "bb-vs-btn-open",
+      "hand": "KJs",
+      "answer": "call",
+      "explanation": "跟注。KJs 正坐在“跟注 vs 3bet”的分界上：诈唬 3bet 的同花 broadway 带只有 K8s–KTs（规则 R4），KJs 在其上方、回到跟注清单的 K2s+（规则 R2）。只差一档的 KTs 才是 3bet——沿 K 列点格子找这条边界。",
+      "ruleRefs": ["p1-u07-R2", "p1-u07-R4"],
+      "kp": "bb-defense-range"
+    },
+    {
+      "id": "p1-u07-q20",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，SB 弃牌，你在 BB 手持 7♥6♥。在范围表中点选这手牌的标准行动。",
+      "spot": "bb-vs-btn-open",
+      "hand": "76s",
+      "answer": "call",
+      "explanation": "跟注。76s 是小同花连张防守清单的明确成员（规则 R2：76s、65s、54s 在列，75s、64s 不在），只需补 1.5bb 的价格让这类隐蔽牌足以防守（规则 R1）。再弱一档的 75s 就落到默认弃牌格——点格子时体会这条底线。",
+      "ruleRefs": ["p1-u07-R1", "p1-u07-R2"],
+      "kp": "bb-defense-range"
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "id": "p1-u09",
+  "phase": 1,
+  "order": 9,
+  "title": "3-bet 诈唬与阻挡牌",
+  "lesson": {
+    "concept": "3bet 诈唬不是拿弱牌瞎加注，而是挑有后路、有阻挡的牌去夺取底池。最佳候选是同花轮子 A2s-A5s：手持 A 把对手 AA 从 6 种组合压到 3 种、AK 从 16 种压到 12，自己还有坚果顺子与同花潜力；K8s-KTs、QTs、JTs 同属标准诈唬候选，J9s 与 76s-98s 只限 IP 面对宽开池时使用。反面教材：A2o-A5o、K8o-、Q9o- 被主导，中了 A/K 也可能输给更好的踢脚；小对子 22-66 在 OOP 应平跟，保留中 set 的隐含赔率。频率上每 3 次 3bet 约 2 次价值 1 次诈唬，面对紧开池还要再压缩诈唬比例，避免被强范围全跟。",
+    "rules": [
+      { "id": "p1-u09-R1", "text": "最佳诈唬候选是同花轮子 A2s-A5s：本身有坚果顺子半诈唬潜力，且手持 A 阻挡对手 AA/AK；其他标准诈唬候选为 K8s-KTs、QTs、JTs，J9s 需 IP 面对宽开池。" },
+      { "id": "p1-u09-R2", "text": "阻挡牌原理：你持有 A 时对手 AA 从 6 种组合减至 3 种、AK 从 16 减至 12，手持 K 同理减少 KK；阻挡牌使对手更强范围概率下降、弃牌率上升。" },
+      { "id": "p1-u09-R3", "text": "位置好（IP）面对宽开池可用同花连张 76s-98s 作 3bet 诈唬；OOP 不要，改为跟注。" },
+      { "id": "p1-u09-R4", "text": "不要用被主导的牌诈唬 3bet（A2o-A5o、K8o-、Q9o-），中了 A/K 也可能输给更好的踢脚；OOP 也不要用小对子 3bet（跟注中 set 更 +EV）。" },
+      { "id": "p1-u09-R5", "text": "经验平衡：每 3 次 3bet 约 2 次价值 1 次诈唬，避免过度诈唬被对手全跟。" }
+    ],
+    "example": "你在 BTN 持 A♠5♠，CO 开池 2.5bb，有效筹码 100bb。这是教科书式的诈唬 3bet：手持 A 把对手 AA 从 6 种压到 3 种、AK 从 16 种压到 12（规则 R2），自己还有坚果顺子与同花听牌的后路（规则 R1）。反观 A♣5♥ 就要弃：被主导的牌中了 A 也可能输踢脚（规则 R4）。判断顺序：先问是否同花轮子或有高张同花，再问位置与开池宽度。",
+    "advanced": [
+      { "title": "card removal：组合削减可以精确计算", "text": "对手范围里每类牌的组合数都能算：AA 共 6 种，你手持一张 A 后只剩 3 种；AK 有 4×4=16 种，手持 A 后 3×4=12 种；手持 K 时 KK 同理 6→3（规则 R2）。阻挡牌带来双重收益：对手“碾压你”的强牌组合变少，3bet 被 4bet 全下的风险下降；你的诈唬牌自身又有听牌底子，被跟注后仍能赢。规则 R1 独宠 A2s–A5s，正是因为“A 阻挡 + 坚果后门”两者兼得。" },
+      { "title": "极化 3bet 范围：中间牌被抽空", "text": "合并表呈两极结构：顶端价值腿（JJ+、AQ+）被跟注仍有高权益，底端诈唬腿（A2s–A5s、K8s–KTs、QTs、JTs）靠弃牌率与后路盈利；中间牌（AJs、KQs、TT/99）被抽空去平跟——它们造池后权益尴尬：被跟注不够赢、被 4bet 又舍不得。这就是 Janda 所说的极化范围。用这个结构看下一单元“面对 3bet 的应对”：对手范围越极化，你抓诈所需的手牌质量门槛越低。" }
+    ],
+    "pitfalls": [
+      "拿被主导的牌当诈唬腿：A2o–A5o、K8o、Q9o 中了高张也输踢脚（规则 R4）。诈唬腿必须同花或带强阻挡——“有一张 A”不构成 3bet 理由。",
+      "位置搞反：76s–98s、J9s 只在 IP 面对宽开池时诈唬（规则 R1、R3）；OOP 拿去 3bet 只会把可玩牌打成败率最低的加注。"
+    ],
+    "sources": [
+      { "name": "holdempro.app 3-bet 范围工具", "url": "https://holdempro.app/tools/3-bet-ranges", "note": "价值 + 诈唬合并 3bet 范围对照" },
+      { "name": "pokertrainer.se 3-bet 范围文章", "url": "https://pokertrainer.se/preflop-3-betting-ranges/", "note": "诈唬腿选牌与阻挡牌原理讲解" },
+      { "name": "《Applications of No-Limit Hold'em》（Matthew Janda）", "note": "极化范围理论来源" }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "co-vs-mp-3bet",
+      "title": "CO 对 MP 开池的 3bet 范围（价值 + 诈唬）@100bb（6人桌）",
+      "spot": "6人桌现金局，有效筹码 100bb，UTG 已弃牌，MP 开池 2.5bb，你在 CO 用“价值 + 诈唬”混合范围 3bet（IP，尺度 2.5–3 倍）",
+      "actions": [
+        { "key": "3bet", "label": "3bet", "hands": ["JJ", "QQ", "KK", "AA", "AQs", "AKs", "AQo", "AKo", "A2s", "A3s", "A4s", "A5s", "K8s", "K9s", "KTs", "QTs", "JTs"] },
+        { "key": "fold", "label": "弃牌", "default": true }
+      ],
+      "note": "合并范围 92 种组合占 6.9%：价值腿 56 种（JJ+、AQ+，4.2%），诈唬腿 36 种（2.7%），约 1.6:1——比规则 R5“约 2 价值 1 诈唬”的口诀略偏诈唬，因为 CO 在 IP 面对 MP 较宽的开池可以更凶。诈唬腿全部带阻挡：A2s–A5s 手持 A 把对手 AA 从 6 组合压到 3、AK 从 16 压到 12（规则 R2），K8s–KTs 手持 K 削减 KK，且自身有同花/顺子后路（规则 R1）。J9s 与 76s–98s 需 IP 面对更宽开池才上桌（规则 R1、R3），本表不含；AJs、KQs、TT/99 这类中间牌去平跟，构成极化结构。",
+      "source": "学习化近似：对照 GTO Wizard 免费翻前解 / holdempro.app 3-bet 范围工具"
+    }
+  ],
+  "questions": [
+    {
+      "id": "p1-u09-q01",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，CO 玩家开池 2.5bb，你在 BTN 持有 A♠5♠。如何行动？",
+      "options": ["3-bet 到约 8-10bb", "跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "3-bet。A5s 是同花轮子的核心诈唬候选（规则 R1）：手持 A 阻挡对手 AA/AK（规则 R2），自己还有坚果顺子与同花听牌的后路，介于纯诈唬与薄价值之间，是本单元第一候选。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R2"],
+      "kp": "wheel-aces"
+    },
+    {
+      "id": "p1-u09-q02",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，CO 玩家开池 2.5bb，你在 SB 持有 A♣2♦。如何行动？",
+      "options": ["3-bet 诈唬", "跟注", "弃牌"],
+      "answer": 2,
+      "explanation": "弃牌。A2o 是被主导的牌（规则 R4）：就算翻后中了 A，踢脚 2 也几乎必然输给更好的 A；它在 OOP 既没有可玩性也没有有效的同花后路。千万不要因为它有一张 A 就拿来 3bet 诈唬。",
+      "ruleRefs": ["p1-u09-R4"],
+      "kp": "dominated-hands"
+    },
+    {
+      "id": "p1-u09-q03",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，HJ 玩家偏宽开池 2.5bb，你在 BTN 持有 7♠6♠。如何行动？",
+      "options": ["3-bet 到约 8-10bb", "跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "3-bet。你在 IP 面对偏宽开池，76s 正是规则 R3 点名的同花连张诈唬候选：翻后可玩性高，能用半诈唬持续施压。注意位置是前提——若换到 OOP（如 SB/BB）拿到同样的 76s，应改为跟注（规则 R3）。",
+      "ruleRefs": ["p1-u09-R3"],
+      "kp": "bluff-candidate"
+    },
+    {
+      "id": "p1-u09-q04",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，你在 BB 持有 2♣2♦，已投入 1bb 大盲。如何行动？",
+      "options": ["3-bet", "跟注（再补 1bb）", "弃牌"],
+      "answer": 1,
+      "explanation": "跟注。22 在 OOP 的价值来自翻后击中暗三条的隐含赔率（规则 R4）：3bet 会把底池做大，却让 22 在绝大多数翻面难以继续；便宜看翻牌、保留中 set 的爆发力更 +EV。小对子 22-66 在 OOP 都应遵此原则。",
+      "ruleRefs": ["p1-u09-R4"],
+      "kp": "oop-call-preserve"
+    },
+    {
+      "id": "p1-u09-q05",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，CO 玩家开池 2.5bb，你在 BTN 持有 K♠T♦。如何行动？",
+      "options": ["3-bet 诈唬", "跟注", "弃牌"],
+      "answer": 1,
+      "explanation": "跟注。KTo 是不能拿来诈唬 3bet 的被主导牌（规则 R4）：中 K 可能输给 AK/KQ/KJ 的更好踢脚，中 T 也常被压制。但在 IP 平跟的价格合适，可以靠位置翻后偷池，所以也不必弃牌—— playable 不等于可 3bet。",
+      "ruleRefs": ["p1-u09-R4"],
+      "kp": "dominated-hands"
+    },
+    {
+      "id": "p1-u09-q06",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，HJ 玩家开池 2.5bb，你在 CO 持有 Q♥T♥。如何行动？",
+      "options": ["3-bet 到约 8-10bb", "跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "3-bet。QTs 是规则 R1 列出的标准诈唬候选：高张同花连张，顶对、顺子、同花多条成牌路径，被跟注后仍有大量继续下注的机会。相比平跟，3bet 能立刻夺取主动权并可能直接收池。",
+      "ruleRefs": ["p1-u09-R1"],
+      "kp": "bluff-candidate"
+    },
+    {
+      "id": "p1-u09-q07",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，你在 BB 持有 A♦5♦，正考虑 3bet 诈唬。你手持一张 A，对手可能持有的 AA 组合数会从 6 种变为多少？",
+      "options": ["仍是 6 种", "减至 3 种", "减至 1 种", "减至 0 种"],
+      "answer": 1,
+      "explanation": "减至 3 种。AA 共 6 种组合，你手持 A♦ 后对手只剩 A♥A♠、A♥A♣、A♠A♣ 三种（规则 R2）。阻挡牌的精髓就是削减对手范围里'碾压你'的那部分，3bet 诈唬被再加注全下的风险随之下降。",
+      "ruleRefs": ["p1-u09-R2"],
+      "kp": "blocker"
+    },
+    {
+      "id": "p1-u09-q08",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，HJ 玩家开池 2.5bb，你在 BTN 持有 A♥4♥。你手持一张 A，对手可能持有的 AK 组合数会从 16 种变为多少？",
+      "options": ["仍是 16 种", "减至 12 种", "减至 9 种", "减至 8 种"],
+      "answer": 1,
+      "explanation": "减至 12 种。AK 有 4×4=16 种组合，你手持 A♥ 后对手的 A 只剩 3 张可选，3×4=12 种（规则 R2）。对手拿着 AK 继续的概率下降，你的诈唬翻后更容易成功——这就是阻挡牌提高弃牌率的原理。",
+      "ruleRefs": ["p1-u09-R2"],
+      "kp": "blocker"
+    },
+    {
+      "id": "p1-u09-q09",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，紧手玩家在 UTG 开池 2.5bb（其开池范围仅约 15%），你在 BTN 持有 9♣8♣。关于你的诈唬 3bet 范围，正确的调整是？",
+      "options": ["保持不变：宽开池时用的诈唬候选继续 3bet", "大幅削减：只对更窄的高质候选保留少量诈唬", "明显扩张：紧手很少跟注，应加大剥削力度"],
+      "answer": 1,
+      "explanation": "大幅削减。对手开池范围越紧，其继续 3bet 的范围也越强，纯诈唬的弃牌率骤降（规则 R3 的扩张原则只适用于面对宽开池；规则 R5 提醒过度诈唬会被强范围全跟）。此时 98s 这类纯诈唬牌应直接放弃诈唬用途。",
+      "ruleRefs": ["p1-u09-R3", "p1-u09-R5"],
+      "kp": "bluff-candidate"
+    },
+    {
+      "id": "p1-u09-q10",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，你在 BB 持有 K♥T♥，已投入 1bb 大盲。如何行动？",
+      "options": ["3-bet", "跟注（再补 1bb）", "弃牌"],
+      "answer": 0,
+      "explanation": "3-bet。KTs 是规则 R1 的标准诈唬候选：同花加高张，成牌路径多，且手持 K 顺带阻挡对手的 KK（规则 R2）。BB 面对 BTN 宽开池时 3bet 与跟注在求解器中共存，本课按 3bet 处理，以建立'有阻挡的同花高张可进攻'的清晰边界。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R2"],
+      "kp": "bluff-candidate"
+    },
+    {
+      "id": "p1-u09-q11",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb，CO 玩家开池 2.5bb，你在 BTN 持有 J♠9♠。如何行动？",
+      "options": ["3-bet 到约 8-10bb", "跟注", "弃牌"],
+      "answer": 0,
+      "explanation": "3-bet。你在 IP 面对较宽开池，J9s 恰好满足规则 R1 的附加条件（IP 面对宽开池）：翻后有顺子与同花两条隐蔽的成牌路径。对照规则 R3 的位置原则——若你在 OOP 拿到同样的 J9s，应改为跟注而非诈唬 3bet。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R3"],
+      "kp": "bluff-candidate"
+    },
+    {
+      "id": "p1-u09-q12",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，HJ 玩家偏宽开池 2.5bb，你在 BTN，计划混入一些 3bet 诈唬。以下哪些手牌是好的 3bet 诈唬候选？（多选）",
+      "options": ["A♠2♠", "K♠T♠", "Q♠T♠", "9♠8♠", "A♣2♦", "K♦8♣", "Q♥9♦", "7♦6♣"],
+      "answer": [0, 1, 2, 3],
+      "explanation": "前四项都是好候选：A♠2♠ 是同花轮子，阻挡 AA/AK 且有坚果顺子潜力（规则 R1、规则 R2）；K♠T♠、Q♠T♠ 属于 K8s-KTs/QTs 标准候选（规则 R1）；9♠8♠ 是 IP 面对宽开池可用的同花连张（规则 R3）。后四项都错：A♣2♦、K♦8♣、Q♥9♦ 是被主导的牌，中了高张也可能输踢脚（规则 R4）；7♦6♣ 非同花连张既无阻挡、牌力也太弱，诈唬成功率太低（规则 R4）。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R2", "p1-u09-R3", "p1-u09-R4"],
+      "kp": "bluff-candidate"
+    },
+    {
+      "id": "p1-u09-q13",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，CO 玩家开池 2.5bb，你在 BTN，打算用'价值 + 诈唬'混合的范围 3bet。以下哪些手牌作为 3bet 诈唬是错误的？（多选）",
+      "options": ["A♠5♠", "K♥T♥", "Q♠T♠", "J♠T♠", "A♣5♥", "K♦9♦", "Q♣9♣", "7♦6♣"],
+      "answer": [4, 5, 6, 7],
+      "explanation": "作为诈唬错误的是后四项：A♣5♥ 是被主导的轮子 A，中 A 输踢脚的劣势救不回来（规则 R4）；K♦9♦、Q♣9♣ 同属 K8o-/Q9o- 被主导区（规则 R4）；7♦6♣ 非同花连张无阻挡、牌力太弱（规则 R4）。前四项反而是正确候选：A♠5♠（规则 R1、规则 R2）与 K♥T♥、Q♠T♠、J♠T♠（规则 R1）。注意看清题干：问的是'错误'的选项。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R4"],
+      "kp": "dominated-hands"
+    },
+    {
+      "id": "p1-u09-q14",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，CO 玩家开池 2.5bb，你在 BTN，打算以'价值 + 诈唬'混合的范围 3bet。以下哪些手牌可以 3bet？（多选）",
+      "options": ["A♠A♥", "K♠K♦", "A♣K♦", "A♦5♦", "K♥T♥", "Q♠T♠", "A♣2♦", "2♠2♥"],
+      "answer": [0, 1, 2, 3, 4, 5],
+      "explanation": "可 3bet：A♠A♥、K♠K♦、A♣K♦ 是标准价值 3bet；A♦5♦ 是同花轮子诈唬候选，阻挡 AA/AK（规则 R1、规则 R2）；K♥T♥、Q♠T♠ 是高张同花诈唬候选（规则 R1）。不可 3bet：A♣2♦ 被主导（规则 R4）；2♠2♥ 是小对子，平跟保留中 set 的隐含赔率比 3bet 更 +EV。整体结构正是规则 R5 说的'约 2 价值 + 1 诈唬'的混合。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R2", "p1-u09-R4", "p1-u09-R5"],
+      "kp": "bluff-candidate"
+    },
+    {
+      "id": "p1-u09-q15",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb，BTN 玩家开池 2.5bb，你在大盲位 BB，已投入 1bb。以下哪些手牌应该跟注而非 3bet？（多选）",
+      "options": ["2♣2♦", "5♠5♥", "7♠6♠", "9♥8♥", "J♠9♠", "A♠5♠", "K♠T♠", "A♦K♣"],
+      "answer": [0, 1, 2, 3, 4],
+      "explanation": "应跟注：2♣2♦、5♠5♥ 是小对子，OOP 3bet 会浪费中 set 的隐含赔率，便宜看翻牌更 +EV（规则 R4）；7♠6♠、9♥8♥、J♠9♠ 是同花连张/隔张，OOP 不应用来诈唬 3bet，跟注保留翻后可玩性（规则 R3）。应 3bet：A♠5♠（规则 R1、规则 R2）、K♠T♠（规则 R1）是 OOP 也可用的阻挡型诈唬候选，A♦K♣ 则是价值 3bet。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R3", "p1-u09-R4"],
+      "kp": "oop-call-preserve"
+    },
+    {
+      "id": "p1-u09-q16",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 已弃牌，MP 玩家开池 2.5bb，你在 CO 手持 J♠J♥。在范围表中点选这手牌的标准行动。",
+      "spot": "co-vs-mp-3bet",
+      "hand": "JJ",
+      "answer": "3bet",
+      "explanation": "3bet。JJ 是合并范围顶端的“价值腿”：当前牌力领先 MP 的继续跟注范围，被跟注也有稳定胜率。整个表就是规则 R5 所说的“价值 + 诈唬”混合结构——约 2 次价值配 1 次诈唬，JJ 属于价值那一侧。",
+      "ruleRefs": ["p1-u09-R5"],
+      "kp": "threebet-bluff-range"
+    },
+    {
+      "id": "p1-u09-q17",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 已弃牌，MP 玩家开池 2.5bb，你在 CO 手持 A♦4♦。在范围表中点选这手牌的标准行动。",
+      "spot": "co-vs-mp-3bet",
+      "hand": "A4s",
+      "answer": "3bet",
+      "explanation": "3bet（诈唬腿）。A4s 是同花轮子 A2s–A5s 的标准诈唬候选（规则 R1）：手持 A 让对手 AA 从 6 组合减到 3、AK 从 16 减到 12（规则 R2），3bet 被 4bet 全下的风险随之下降；自己还保留坚果顺子与同花听牌的后路。这就是“因阻挡牌可 3bet”的教科书结构。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R2"],
+      "kp": "threebet-bluff-range"
+    },
+    {
+      "id": "p1-u09-q18",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 已弃牌，MP 玩家开池 2.5bb，你在 CO 手持 A♠3♦。在范围表中点选这手牌的标准行动。",
+      "spot": "co-vs-mp-3bet",
+      "hand": "A3o",
+      "answer": "fold",
+      "explanation": "弃牌。A3o 属于被主导的轮子 A（规则 R4）：中了 A 也几乎必然输踢脚，非同花让它连诈唬需要的后路都没有。规则 R1 的诈唬候选是同花的 A2s–A5s——是否同花是这里的分水岭。",
+      "ruleRefs": ["p1-u09-R4", "p1-u09-R1"],
+      "kp": "threebet-bluff-range"
+    },
+    {
+      "id": "p1-u09-q19",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 已弃牌，MP 玩家开池 2.5bb，你在 CO 手持 J♠9♠。在范围表中点选这手牌的标准行动。",
+      "spot": "co-vs-mp-3bet",
+      "hand": "J9s",
+      "answer": "fold",
+      "explanation": "落在默认侧。J9s 是“条件诈唬”牌：规则 R1 要求它 IP 面对宽开池才上场，CO 对 MP 的开池宽度不够（规则 R3 的 76s–98s 同理），本表不含它——不要看到同花隔张就机械 3bet。面对更宽的开池（如对 BTN 的防守）才是它的舞台。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R3"],
+      "kp": "threebet-bluff-range"
+    },
+    {
+      "id": "p1-u09-q20",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 已弃牌，MP 玩家开池 2.5bb，你在 CO 手持 K♠T♠。在范围表中点选这手牌的标准行动。",
+      "spot": "co-vs-mp-3bet",
+      "hand": "KTs",
+      "answer": "3bet",
+      "explanation": "3bet（诈唬腿）。KTs 在 K8s–KTs 的标准诈唬带里（规则 R1）：手持 K 把对手 KK 从 6 组合压到 3（规则 R2），同花高张结构翻后有顶对、顺子、同花多条成牌路径，被跟注也能继续打。它是“阻挡强牌 + 翻后可玩”双重标准的典型。",
+      "ruleRefs": ["p1-u09-R1", "p1-u09-R2"],
+      "kp": "threebet-bluff-range"
+    }
+  ]
+}

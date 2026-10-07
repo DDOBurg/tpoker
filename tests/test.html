@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TPoker T2 逻辑测试</title>
+  <style>
+    body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", monospace; background: #0e1512; color: #e8efec; padding: 16px; font-size: 14px; }
+    h1 { font-size: 18px; }
+    .pass { color: #6fd6a5; }
+    .fail { color: #f0967f; font-weight: 700; }
+    #summary { margin-top: 12px; font-size: 16px; font-weight: 700; }
+    li { list-style: none; }
+  </style>
+</head>
+<body>
+  <h1>TPoker T2 逻辑单元测试</h1>
+  <ul id="list"></ul>
+  <div id="summary">运行中…</div>
+  <script src="../js/logic.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../js/ranges.js"></script>
+  <script src="tests.js"></script>
+  <script>
+    var result = TPTests.run(window.TPLogic, window.TPStore, window.TPRanges);
+    var list = document.getElementById('list');
+    for (var i = 0; i < result.lines.length; i++) {
+      var li = document.createElement('li');
+      li.textContent = result.lines[i];
+      li.className = result.lines[i].indexOf('PASS') === 0 ? 'pass' : 'fail';
+      list.appendChild(li);
+    }
+    var s = document.getElementById('summary');
+    s.textContent = 'T2 结果：' + result.passed + '/' + result.total + ' 通过，' + result.failed + ' 失败';
+    s.className = result.failed === 0 ? 'pass' : 'fail';
+  </script>
+</body>
+</html>

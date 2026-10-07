@@ -1,0 +1,209 @@
+{
+  "id": "p1-u08",
+  "phase": 1,
+  "order": 8,
+  "title": "3-bet 价值范围",
+  "lesson": {
+    "concept": "3-bet 指在对手开池后再度加注。价值 3-bet 的门槛由两个变量决定：对手的开池位置，以及你与对手之间的位置差。对手开得越宽，你能价值 3-bet 的牌越宽：vs UTG 仅 QQ+、AK；vs MP 放宽到 JJ+、AQ+；vs CO/BTN 再放宽到 TT+、AQ+。尺度上：你在对手身后（IP）用 2.5–3 倍开池额；在盲注位（OOP）用 3–3.5 倍且范围更极化——位置差要用更大尺度补偿。强但打不过对手跟注范围的牌（如 99、AJs 面对紧开池）优先跟注保留；同花 AK 则对任何开池都无条件价值 3-bet。",
+    "rules": [
+      { "id": "p1-u08-R1", "text": "价值 3-bet 的牌必须明显强于对手继续跟注的范围：目的是与更弱的范围造大底池，并拒绝其部分继续；牌力不够时加注反而只被更强范围跟注。" },
+      { "id": "p1-u08-R2", "text": "对手开池越宽，你的价值 3-bet 越宽：vs UTG 从 QQ+、AK 起；vs MP 放宽到 JJ+、AQ+；vs CO/BTN 再放宽到 TT+、AQ+。" },
+      { "id": "p1-u08-R3", "text": "尺度规则：你在对手身后（IP）用 2.5–3 倍开池额；盲注位（OOP）用 3–3.5 倍且范围更极化。位置越差尺度越大，用更大尺度补偿位置劣势。" },
+      { "id": "p1-u08-R4", "text": "强但不足以价值 3-bet 的牌（如 99、AJs 面对紧开池）优先跟注保留：既能控制底池，又避免被 4-bet 逼弃、把可玩性浪费在造大底池上。" },
+      { "id": "p1-u08-R5", "text": "同花 AK 永远价值 3-bet：vs 任何位置、任何宽度的开池都无条件加注，当前牌力领先跟注范围，兼具坚果潜力与阻挡价值。" }
+    ],
+    "example": "UTG 开池到 2bb，你在 BTN 持 A♦K♦。AKs 无条件价值 3-bet（规则 R5），且你在 IP，尺度用 2.5–3 倍即 5–6bb（规则 R3）。换成 A♥J♥ 对同一开池则只跟注：AJ 打不动 UTG 的继续跟注范围，属规则 R4 的保留牌。判断顺序：先定价值门槛（对手位置决定），再定尺度（你的位置决定）。",
+    "advanced": [
+      { "title": "价值 3bet 的下限：对手跟注范围里你仍有足够权益的最弱牌", "text": "把对手继续跟注的范围想成从强到弱的排序：价值 3bet 吃掉的是你被跟注后仍有稳定胜率的那一段。vs UTG 其跟注范围顶端是 AQ/AJs，你的下限只能停在 QQ+/AK；vs CO 顶端降到 TT/AQ，你的下限随之降到 TT/AQ（规则 R2）。一旦越界——用 99 对紧范围造池——你被跟注时权益不足五成，加注就从“价值”变成烧筹码（规则 R1）。选价值腿时永远先问：“被跟注时我还有没有稳定胜率？”" },
+      { "title": "被 4bet 后的可玩性反向影响选牌", "text": "价值 3bet 还要预演被 4bet 的剧本：TT 被 4bet 常陷入跟注看翻牌或弃牌的两难，而 AK 被 4bet 可以舒服地继续（还阻挡 AA/KK）。所以当前牌力相近时，AK 的价值 3bet 优先级高于小对子——这正是规则 R5 让 AKs 无条件 3bet 的原因。价值腿的隐含筛选条件不是“现在多强”，而是“被加注后我还能不能打”。" }
+    ],
+    "pitfalls": [
+      "见强牌就 3bet：99、AJs 对紧开池打不动跟注范围（规则 R1、R4），3bet 只会逼走更差的牌、留下更强的范围。强牌先过“跟注范围顶端”这道筛子，再谈加注。",
+      "尺度背固定 bb 数：IP 用 2.5–3 倍、OOP 用 3–3.5 倍开池额（规则 R3）。开池额一变（2bb 与 3bb），固定 bb 尺度就会整体偏大或偏小——尺度永远锚定倍数。"
+    ],
+    "sources": [
+      { "name": "Upswing Poker 免费翻前图表", "url": "https://www.upswingpoker.com/preflop-charts/", "note": "3-bet 价值范围交叉核对" },
+      { "name": "GTO Wizard 免费翻前解", "url": "https://www.gtowizard.com", "note": "6-max 100bb 3-bet 范围核对" },
+      { "name": "PokerCoaching 免费翻前图表", "url": "https://pokercoaching.com/preflop-charts/", "note": "Jonathan Little 公开 6-max 100bb 图表" }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "btn-vs-co-3bet-value",
+      "title": "BTN 对 CO 开池的价值 3bet 范围 @100bb（6人桌）",
+      "spot": "6人桌现金局，有效筹码 100bb，UTG 与 MP 已弃牌，CO 开池 2.5bb，你在 BTN 计划做价值 3bet（IP，尺度 2.5–3 倍）",
+      "actions": [
+        { "key": "3bet", "label": "3bet", "hands": ["TT", "JJ", "QQ", "KK", "AA", "AQs", "AKs", "AQo", "AKo"] },
+        { "key": "fold", "label": "弃牌", "default": true }
+      ],
+      "note": "价值腿 62 种组合占 4.7%（62/1326）。选人逻辑：对手开池越宽、价值 3bet 越宽——vs UTG 只到 QQ+、AK（34 种，2.6%），vs MP 放宽到 JJ+、AQ+（56 种，4.2%），vs CO/BTN 再放宽到 TT+、AQ+（本表，规则 R2）。原则是“明显强于对手继续跟注范围的顶端”（规则 R1）：TT 打不动 UTG 的跟注范围、却能打 CO 的。注意 AQs/AKs 永远在内（规则 R5）；AJs、KQs、99 这类“强但不够价值”的牌按规则 R4 跟注保留，不是价值 3bet，在表中落默认侧。",
+      "source": "学习化近似：对照 GTO Wizard 免费翻前解 / PokerCoaching 6-max 100bb 3-bet 图表"
+    }
+  ],
+  "questions": [
+    {
+      "id": "p1-u08-q01",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。UTG 开池到 2bb，UTG+1 与 MP 已弃牌，你在 CO 持有 K♠K♦。最优行动？",
+      "options": ["价值 3-bet", "跟注保留", "弃牌"],
+      "answer": 0,
+      "explanation": "价值 3-bet。KK 明显强于 UTG 继续跟注的范围（规则 R1），且 vs UTG 的价值 3-bet 范围 QQ+、AK 包含 KK（规则 R2）。目的是造大底池，并让 UTG 的 AQ/AJ 类牌为继续付出更高代价。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R2"],
+      "kp": "value-3bet"
+    },
+    {
+      "id": "p1-u08-q02",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。UTG 开池到 2bb，MP、CO 已弃牌，你在 BTN 持有 A♥J♥。最优行动？",
+      "options": ["价值 3-bet", "跟注保留", "弃牌"],
+      "answer": 1,
+      "explanation": "跟注保留。AJs 很强，但 vs UTG 的紧开池打不动其继续跟注范围——3-bet 会逼走更差的牌、只留强范围（规则 R1）。按规则 R4 跟注保留：保留这手牌对抗宽范围的可玩性与位置优势。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R4"],
+      "kp": "flat-vs-3bet"
+    },
+    {
+      "id": "p1-u08-q03",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。MP 开池到 2.5bb，前面玩家已弃牌，你在 BTN 持有 J♦J♣。最优行动？",
+      "options": ["价值 3-bet", "跟注保留", "弃牌"],
+      "answer": 0,
+      "explanation": "价值 3-bet。MP 开池比 UTG 宽，价值 3-bet 范围放宽到 JJ+（规则 R2）；JJ 仍明显强于 MP 的继续跟注范围（规则 R1），造大底池是正收益。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R2"],
+      "kp": "position-adjust"
+    },
+    {
+      "id": "p1-u08-q04",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。MP 开池到 2.5bb，UTG 已弃牌，你在 CO 持有 A♦Q♦。最优行动？",
+      "options": ["价值 3-bet", "跟注保留", "弃牌"],
+      "answer": 0,
+      "explanation": "价值 3-bet。vs MP 的价值 3-bet 底线放宽到 AQ+（规则 R2），AQs 正压在线上；面对较宽的 MP 范围，AQ 的踢脚足够领先其继续跟注的范围（规则 R1）。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R2"],
+      "kp": "position-adjust"
+    },
+    {
+      "id": "p1-u08-q05",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。BTN 开池到 2.5bb，小盲已弃牌，你在 BB 持有 T♥T♠。最优行动？",
+      "options": ["价值 3-bet", "跟注保留", "弃牌"],
+      "answer": 0,
+      "explanation": "价值 3-bet。BTN 是全桌最宽的开池，vs BTN 的价值 3-bet 放宽到 TT+（规则 R2），TT 在内。注意你在盲注位属 OOP，若加注尺度应取 3–3.5 倍（规则 R3）。",
+      "ruleRefs": ["p1-u08-R2", "p1-u08-R3"],
+      "kp": "position-adjust"
+    },
+    {
+      "id": "p1-u08-q06",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。MP 开池到 2.5bb，前面玩家已弃牌，你在 BTN 持有 9♠9♦。最优行动？",
+      "options": ["价值 3-bet", "跟注保留", "弃牌"],
+      "answer": 1,
+      "explanation": "跟注保留。vs MP 价值 3-bet 的底线是 JJ（规则 R2），99 打不动对手继续跟注的范围（规则 R1）。按规则 R4 跟注：保留对宽范围的隐含赔率，翻后再定。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R2", "p1-u08-R4"],
+      "kp": "flat-vs-3bet"
+    },
+    {
+      "id": "p1-u08-q07",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。MP 开池到 2.5bb，UTG 已弃牌，你在 BTN 持有 A♦K♦ 并决定价值 3-bet。最优尺度？",
+      "options": ["6bb（2.4 倍）", "7.5bb（3 倍）", "9bb（3.6 倍）", "12bb（4.8 倍）"],
+      "answer": 1,
+      "explanation": "你在 BTN 是 IP（对手身后），尺度用 2.5–3 倍开池额（规则 R3）：2.5bb × 3 = 7.5bb，正好在带内封顶；9bb 以上属于盲注位补偿位置差的尺度，IP 不需要。AKs 本身无条件价值 3-bet（规则 R5）。",
+      "ruleRefs": ["p1-u08-R3", "p1-u08-R5"],
+      "kp": "sizing-ip-oop"
+    },
+    {
+      "id": "p1-u08-q08",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。BTN 开池到 2.5bb，小盲已弃牌，你在 BB 持有 Q♠Q♦ 并决定价值 3-bet。最优尺度？",
+      "options": ["6bb（2.4 倍）", "7bb（2.8 倍）", "8.5bb（3.4 倍）", "11bb（4.4 倍）"],
+      "answer": 2,
+      "explanation": "BB 对 BTN 是 OOP，规则 R3 要求 3–3.5 倍：2.5bb × 3.4 ≈ 8.5bb。7bb 只有 2.8 倍，对盲注位偏小——会给 BTN 的宽范围太好赔率，且翻后仍处信息劣势；尺度大一点正是位置补偿。",
+      "ruleRefs": ["p1-u08-R3"],
+      "kp": "sizing-ip-oop"
+    },
+    {
+      "id": "p1-u08-q09",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。UTG 开池到 2bb，UTG+1 与 MP 已弃牌，你在 BTN 持有 A♣K♣ 并决定价值 3-bet。最优尺度？",
+      "options": ["4bb（2 倍）", "5.5bb（2.75 倍）", "7bb（3.5 倍）", "9bb（4.5 倍）"],
+      "answer": 1,
+      "explanation": "UTG 开 2bb，你在 BTN 属 IP，2.5–3 倍 = 5–6bb（规则 R3），四个选项中只有 5.5bb 落在带内。注意尺度永远锚定开池额的倍数，而不是背固定 bb 数。",
+      "ruleRefs": ["p1-u08-R3", "p1-u08-R5"],
+      "kp": "sizing-ip-oop"
+    },
+    {
+      "id": "p1-u08-q10",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。UTG 开池到 2bb，轮到你，你在 MP 持有 A♠K♦。最优行动？",
+      "options": ["价值 3-bet", "跟注保留", "弃牌"],
+      "answer": 0,
+      "explanation": "价值 3-bet。同花 AK 对任何开池都无条件价值 3-bet（规则 R5）：当前领先于 UTG 的跟注范围，兼具坚果潜力，还阻挡了 AA/KK。vs UTG 的范围 QQ+、AK 也包含它（规则 R2）。",
+      "ruleRefs": ["p1-u08-R2", "p1-u08-R5"],
+      "kp": "value-3bet"
+    },
+    {
+      "id": "p1-u08-q11",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb。BTN 开池到 2.5bb，小盲已弃牌，你在 BB。以下哪些手牌应该价值 3-bet？（多选）",
+      "options": ["A♠K♥", "A♥Q♥", "T♦T♣", "J♠J♦", "9♣9♦", "A♦J♦", "K♠Q♠", "Q♥J♥"],
+      "answer": [0, 1, 2, 3],
+      "explanation": "vs BTN 开池，价值 3-bet 范围放宽到 TT+、AQ+（规则 R2）：A♠K♥、A♥Q♥、T♦T♣、J♠J♦ 全部在内，且都明显强于 BTN 继续跟注的范围（规则 R1）。9♣9♦ 与 A♦J♦ 强但打不动跟注范围，按规则 R4 倾向跟注；K♠Q♠、Q♥J♥ 属可玩性牌，不在价值 3-bet 清单（规则 R1）。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R2", "p1-u08-R4"],
+      "kp": "value-3bet"
+    },
+    {
+      "id": "p1-u08-q12",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb。UTG 开池到 2bb，UTG+1、MP、CO 已弃牌，你在 BTN。以下哪些手牌应该价值 3-bet？（多选）",
+      "options": ["A♠K♠", "A♦K♣", "Q♠Q♦", "J♥J♦", "K♠K♥", "T♣T♦", "A♥Q♥", "A♠A♣"],
+      "answer": [0, 1, 2, 4, 7],
+      "explanation": "vs UTG 开池，价值 3-bet 只有 QQ+、AK（规则 R2）：A♠K♠、A♦K♣、Q♠Q♦、K♠K♥、A♠A♣ 五项在内。J♥J♦、T♣T♦ 对 UTG 紧范围只够跟注（规则 R4）；A♥Q♥ 同理不足以价值 3-bet——打不动对手继续跟注的范围（规则 R1）。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R2", "p1-u08-R4"],
+      "kp": "position-adjust"
+    },
+    {
+      "id": "p1-u08-q13",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 与 MP 已弃牌，CO 玩家开池 2.5bb，你在 BTN 手持 T♠T♦。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-co-3bet-value",
+      "hand": "TT",
+      "answer": "3bet",
+      "explanation": "3bet（价值）。对手开池越宽、价值 3bet 越宽：vs CO 放宽到 TT+、AQ+（规则 R2），TT 正压价值底线；且 TT 明显强于 CO 继续跟注的范围（规则 R1）。换成 UTG 开池，TT 只够跟注保留（规则 R4）——同一手牌、不同对手，格子完全不同。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R2", "p1-u08-R4"],
+      "kp": "threebet-value-range"
+    },
+    {
+      "id": "p1-u08-q14",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 与 MP 已弃牌，CO 玩家开池 2.5bb，你在 BTN 手持 9♥9♦。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-co-3bet-value",
+      "hand": "99",
+      "answer": "fold",
+      "explanation": "落在默认侧。99 很强但不是价值 3bet：它打不动 CO 的继续跟注范围（规则 R1），按规则 R4 应平跟保留位置与翻后可玩性——在这张只画价值腿的表里它不是 3bet 格。点“弃牌”表示“不做价值 3bet”，实战中它是跟注保留牌。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R4"],
+      "kp": "threebet-value-range"
+    },
+    {
+      "id": "p1-u08-q15",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 与 MP 已弃牌，CO 玩家开池 2.5bb，你在 BTN 手持 A♦Q♣。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-co-3bet-value",
+      "hand": "AQo",
+      "answer": "3bet",
+      "explanation": "3bet（价值）。AQ+ 是 vs CO 价值 3bet 的底线（规则 R2），AQo 正压线上：踢脚领先 CO 宽开池的跟注范围（规则 R1）。注意边界在 AQ 不在 AJ——AJo 只差一档就落到默认侧；而 AK 对任何开池都无条件价值 3bet（规则 R5）。",
+      "ruleRefs": ["p1-u08-R1", "p1-u08-R2", "p1-u08-R5"],
+      "kp": "threebet-value-range"
+    },
+    {
+      "id": "p1-u08-q16",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb，UTG 与 MP 已弃牌，CO 玩家开池 2.5bb，你在 BTN 手持 A♠J♠。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-co-3bet-value",
+      "hand": "AJs",
+      "answer": "fold",
+      "explanation": "落在默认侧。AJs 是典型“看起来够强、却不是价值腿”的分界牌：价值 3bet 只到 AQ+（规则 R2），按规则 R4 它应平跟保留——在这张只画价值腿的表中不点 3bet。把 AJs 当诈唬 3bet 的用法属于下一单元的内容。",
+      "ruleRefs": ["p1-u08-R2", "p1-u08-R4"],
+      "kp": "threebet-value-range"
+    }
+  ]
+}

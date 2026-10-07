@@ -1,0 +1,130 @@
+[
+  {
+    "id": "p1-u01",
+    "phase": 1,
+    "order": 1,
+    "title": "起手牌与位置",
+    "questions": 12,
+    "file": "p1-u01.json"
+  },
+  {
+    "id": "p1-u02",
+    "phase": 1,
+    "order": 2,
+    "title": "底池赔率与隐含赔率",
+    "questions": 15,
+    "file": "p1-u02.json"
+  },
+  {
+    "id": "p1-u03",
+    "phase": 1,
+    "order": 3,
+    "title": "UTG/MP 开池",
+    "questions": 20,
+    "file": "p1-u03.json"
+  },
+  {
+    "id": "p1-u04",
+    "phase": 1,
+    "order": 4,
+    "title": "CO 开池",
+    "questions": 16,
+    "file": "p1-u04.json"
+  },
+  {
+    "id": "p1-u05",
+    "phase": 1,
+    "order": 5,
+    "title": "BTN 开池 @100bb",
+    "questions": 20,
+    "file": "p1-u05.json"
+  },
+  {
+    "id": "p1-u06",
+    "phase": 1,
+    "order": 6,
+    "title": "SB 策略",
+    "questions": 16,
+    "file": "p1-u06.json"
+  },
+  {
+    "id": "p1-u07",
+    "phase": 1,
+    "order": 7,
+    "title": "BB 防守",
+    "questions": 20,
+    "file": "p1-u07.json"
+  },
+  {
+    "id": "p1-u08",
+    "phase": 1,
+    "order": 8,
+    "title": "3-bet 价值范围",
+    "questions": 16,
+    "file": "p1-u08.json"
+  },
+  {
+    "id": "p1-u09",
+    "phase": 1,
+    "order": 9,
+    "title": "3-bet 诈唬与阻挡牌",
+    "questions": 20,
+    "file": "p1-u09.json"
+  },
+  {
+    "id": "p1-u10",
+    "phase": 1,
+    "order": 10,
+    "title": "面对 3-bet 的应对",
+    "questions": 20,
+    "file": "p1-u10.json"
+  },
+  {
+    "id": "p1-u11",
+    "phase": 1,
+    "order": 11,
+    "title": "翻前尺度",
+    "questions": 17,
+    "file": "p1-u11.json"
+  },
+  {
+    "id": "p1-u12",
+    "phase": 1,
+    "order": 12,
+    "title": "阶段综合测试",
+    "questions": 33,
+    "file": "p1-u12.json"
+  },
+  {
+    "id": "p1-u13",
+    "phase": 1,
+    "order": 13,
+    "title": "最低防守频率与抓诈",
+    "questions": 12,
+    "file": "p1-u13.json"
+  },
+  {
+    "id": "p1-u14",
+    "phase": 1,
+    "order": 14,
+    "title": "权益与权益实现",
+    "questions": 12,
+    "file": "p1-u14.json"
+  },
+  {
+    "id": "p1-u15",
+    "phase": 1,
+    "order": 15,
+    "title": "SPR 与筹码深度",
+    "questions": 12,
+    "file": "p1-u15.json"
+  },
+  {
+    "id": "p1-u16",
+    "phase": 1,
+    "order": 16,
+    "title": "阻挡牌与解除阻挡（进阶）",
+    "questions": 12,
+    "file": "p1-u16.json"
+  }
+]

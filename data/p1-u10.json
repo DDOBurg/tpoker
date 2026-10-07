@@ -1,0 +1,251 @@
+{
+  "id": "p1-u10",
+  "phase": 1,
+  "order": 10,
+  "title": "面对 3-bet 的应对",
+  "lesson": {
+    "concept": "被 3-bet 时先别看自己的牌，先看对手：3-bet 宽度由对手位置与风格决定——前位紧手的 3-bet 极窄，盲注位与 BTN 的 3-bet 宽得多，对手越宽你越宽。vs 紧 3-bet：AA/KK/QQ/AK 继续（4-bet 为主）、JJ–99 与同花 AQs/KQs/AJs 跟注、小对子仅在有位置且筹码深时看暗三条、AQo/KQo 等被主导牌弃。vs 宽 3-bet：放宽跟注到 ATs/KJs/QJs，并用 AJo/KQo 等有 A/K 阻挡的牌做 4-bet 诈唬反制。4-bet 尺度统一为对方 3-bet 额的 2.2–2.5 倍。",
+    "rules": [
+      { "id": "p1-u10-R1", "text": "继续范围由对手 3-bet 宽度决定：对手越宽你越宽。vs 紧 3-bet 的继续线是 AA/KK/QQ/AK（4-bet 为主）、JJ–99 与同花 AQs/KQs/AJs 跟注；vs 宽 3-bet（盲注位、BTN）放宽跟注到 ATs/KJs/QJs，且宽 3-bet 者可被 4-bet 诈唬反制。" },
+      { "id": "p1-u10-R2", "text": "AA/KK/QQ/AK 永不弃给单次 3-bet：默认 4-bet 打价值，深筹码面对紧 3-bet 可混合跟注慢打。" },
+      { "id": "p1-u10-R3", "text": "中对子（JJ–99）主要跟注；小对子（66–22）有位置且赔率合适时跟注看暗三条，无位置面对紧 3-bet 直接弃。" },
+      { "id": "p1-u10-R4", "text": "AQo/KQo/QJo/ATo 等被主导牌 vs 紧 3-bet 弃牌；vs 宽 3-bet 因有 A/K 阻挡，可用作 4-bet 诈唬。" },
+      { "id": "p1-u10-R5", "text": "4-bet 尺度约为对方 3-bet 额的 2.2–2.5 倍：过小给对手留下跟注甚至反加的便宜选择，过大则让自己在套池前陷入被动。" }
+    ],
+    "example": "你 HJ 开池到 2.5bb，紧手 CO 3-bet 到 9bb，持 A♥Q♦ 应弃牌：被主导牌 vs 紧 3-bet 没有继续方式（规则 R4）。同一手牌换对手：你 CO 开池，BTN 宽 3-bet 到 9bb，AQo 反成标准 4-bet 诈唬，4-bet 到 20bb——A 阻挡对手 AA/AK（规则 R4），尺度约 2.2 倍（规则 R5）。顺序永远是：先给对手 3-bet 宽度定档，再决定弃牌、跟注还是 4-bet（规则 R1）。",
+    "advanced": [
+      { "title": "3-bet 尺度越大，你需要继续的牌越少", "text": "继续与否的本质是赔率：BB 3-bet 到 10bb 时，你跟注只需补 7.5bb 就能打 20.5bb 的底池；若他加到 12bb，你就要补 9.5bb。对手的尺度直接改写你的底池赔率与继续门槛——尺度越大，你范围里能留下的牌越少。这是规则 R5 的另一面：尺度不只约束你自己的 4-bet，也决定对手面对你的 3-bet 时能多宽地继续。" },
+      { "title": "4-bet 诈唬腿：用阻挡牌补全极化结构", "text": "4-bet 诈唬腿专挑“牌力不够跟注、但带 A/K 阻挡”的牌：AQo/AJo/ATo 以 A 阻挡把对手 AA 从 6 种压到 3 种、AK 从 16 种压到 12 种，KQo 同理压制 KK/AK。同花版本（AJs/ATs/KQs）牌力足以跟注，留在跟注腿不诈唬。价值腿（AA/KK/QQ/AK，34 组合、约 2.6%）与诈唬腿（48 组合、约 3.6%）合成一个极化的 4-bet 范围；一旦被对手跟注，你的范围强弱分明，恰是对手极化 3-bet 范围的镜像——这正是单元 16“阻挡牌与解除阻挡”的主线。" }
+    ],
+    "pitfalls": [
+      "对所有 3-bet 用同一套继续范围：对手越宽你越宽。面对紧 3-bet 要弃掉 AQo/ATo 与小对子，只有面对宽 3-bet（盲注位、BTN）才放宽跟注并启动 4-bet 诈唬反制（规则 R1、R4）。",
+      "拿同花强牌当 4-bet 诈唬：AJs/ATs/KQs 牌力足以跟注，跟注保留才有翻后价值；诈唬腿只用牌力不足、带 A/K 阻挡的非同花牌（规则 R1、R4）。"
+    ],
+    "sources": [
+      { "name": "GTO Wizard 免费翻前解", "url": "https://www.gtowizard.com", "note": "BTN vs BB 3-bet 应对范围交叉核对" },
+      { "name": "PokerCoaching 免费翻前图表", "url": "https://pokercoaching.com/preflop-charts/", "note": "6-max 100bb 图表口径" },
+      { "name": "《Modern Poker Theory》（Michael Acevedo）", "note": "极化范围与阻挡牌框架" }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "btn-vs-bb-3bet",
+      "title": "BTN 面对 BB 3-bet 的继续范围 @100bb（6人桌）",
+      "spot": "6人桌现金局，有效筹码 100bb，BTN 开池 2.5bb，BB（宽 3-bet 玩家）3-bet 到 10bb，BTN 有位置",
+      "actions": [
+        { "key": "fourbet", "label": "4-bet", "color": "#c0492f", "hands": ["AA", "KK", "QQ", "AKs", "AKo", "AQo", "AJo", "ATo", "KQo"] },
+        { "key": "call", "label": "跟注", "color": "#3a86c8", "hands": ["JJ", "TT", "99", "88", "77", "66", "55", "44", "33", "22", "AQs", "AJs", "ATs", "KQs", "KJs", "QJs"] },
+        { "key": "fold", "label": "弃牌", "default": true }
+      ],
+      "note": "继续范围合计 166 组合（约 12.5%）：4-bet 腿 82 组合（约 6.2%）＝价值 AA/KK/QQ/AK（34 组合、约 2.6%）＋诈唬 AQo/AJo/ATo/KQo（48 组合、约 3.6%）；跟注腿 84 组合（约 6.3%）＝JJ–22 十档对子＋同花 AQs/AJs/ATs、KQs/KJs、QJs。构成逻辑：价值 4-bet 腿收取 JJ/AK 类更差强牌的价值，跟注腿保留中对子与同花牌的可玩性，再偶尔用带 A/K 阻挡的弱牌做 4-bet 诈唬。位置与赔率决定继续比例：你在 BTN 有位置、BB 3-bet 偏宽，继续比例才到约 12.5%；面对紧 3-bet 要弃得更多（AQo/ATo 改弃、小对子需更深筹码才看暗三条）。4-bet 尺度取 10bb 的 2.2–2.5 倍即 22–25bb。",
+      "source": "学习化近似：对照 GTO Wizard 免费翻前解 / PokerCoaching 6-max 100bb 图表"
+    }
+  ],
+  "questions": [
+    {
+      "id": "p1-u10-q01",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 MP 开池到 2.5bb，CO 是一名紧手常客，他 3-bet 到 9bb（他的 3-bet 范围非常窄），你持有 A♠K♦。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb", "4-bet 到 28bb"],
+      "answer": 2,
+      "explanation": "4-bet 到 20bb。AK 永不弃给单次 3-bet（规则 R2），面对紧 3-bet 以 4-bet 打价值为主，让对手的 JJ/QQ 与 AK 支付。20bb 约为 9bb 的 2.2 倍，正落在 4-bet 尺度区间（规则 R5）；28bb 过大，跟注与弃牌则浪费这手强牌。",
+      "ruleRefs": ["p1-u10-R2", "p1-u10-R5"],
+      "kp": "4bet-value"
+    },
+    {
+      "id": "p1-u10-q02",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 HJ 开池到 2.5bb，CO 的紧手玩家 3-bet 到 9bb，你持有 T♥T♦。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb"],
+      "answer": 1,
+      "explanation": "跟注 9bb。TT 属 JJ–99 中对子，主要跟注（规则 R3）：对紧 3-bet 做 4-bet 只会让更差的牌弃掉、把 JJ/QQ 以上的继续范围粘进来，跟注则保留对手的诈唬与更差超对。弃牌太紧——TT 远在紧 3-bet 的继续线之内（规则 R1）。",
+      "ruleRefs": ["p1-u10-R3", "p1-u10-R1"],
+      "kp": "continue-range"
+    },
+    {
+      "id": "p1-u10-q03",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 150bb（深筹码）。你从 BTN 开池到 2.5bb，BB 3-bet 到 10bb，你持有 6♠6♦。如何行动？",
+      "options": ["弃牌", "跟注 7.5bb（补到 10bb）", "4-bet 到 23bb"],
+      "answer": 1,
+      "explanation": "跟注。150bb 深筹码、你翻后持有位置，小对子跟注看暗三条的赔率非常合适：只需补 7.5bb，有机会赢回 150bb（规则 R3）。BB 对 BTN 的 3-bet 范围偏宽，击中后的隐含赔率更足（规则 R1）；4-bet 则把小对子变成了翻硬币的诈唬。",
+      "ruleRefs": ["p1-u10-R3", "p1-u10-R1"],
+      "kp": "continue-range"
+    },
+    {
+      "id": "p1-u10-q04",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 MP 开池到 2.5bb，CO 的紧手玩家 3-bet 到 9bb，你持有 6♥6♣。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb"],
+      "answer": 0,
+      "explanation": "弃牌。与 66 在深筹码持有位置时的跟注相反：这手牌你无位置、对手是紧 3-bet，错过暗三条后几乎无法兑现 Equity，100bb 深度下赔率也不够（规则 R3 的收紧方向：无位置面对紧 3-bet 直接弃）。位置与对手宽度决定了同一手牌的两种命运（规则 R1）。",
+      "ruleRefs": ["p1-u10-R3", "p1-u10-R1"],
+      "kp": "oop-tighten"
+    },
+    {
+      "id": "p1-u10-q05",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 HJ 开池到 2.5bb，CO 的紧手玩家 3-bet 到 9bb，你持有 A♥Q♥。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb"],
+      "answer": 1,
+      "explanation": "跟注 9bb。AQs 是同花强高张，属于 vs 紧 3-bet 的指定跟注类（规则 R1）：同花保证翻后可玩性，跟注保留对手更差的 A 高张与诈唬范围，也避免被 AA/KK 套池。弃牌太紧；注意同花的 AQs 跟注，非同花的 AQo 却是弃牌，对比记忆。",
+      "ruleRefs": ["p1-u10-R1"],
+      "kp": "continue-range"
+    },
+    {
+      "id": "p1-u10-q06",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 MP 开池到 2.5bb，CO 的紧手玩家 3-bet 到 9bb，你持有 A♦Q♥。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb"],
+      "answer": 0,
+      "explanation": "弃牌。AQo 被对手的 AQs+/AK 主导，vs 紧 3-bet 很难找到安全的翻后路径，是被主导牌的标准弃牌（规则 R4）。注意对比：同一手牌遇到宽 3-bet 可改作 4-bet 诈唬——永远先判断对手的 3-bet 宽度（规则 R1）。",
+      "ruleRefs": ["p1-u10-R4", "p1-u10-R1"],
+      "kp": "dominated-fold"
+    },
+    {
+      "id": "p1-u10-q07",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 CO 开池到 2.5bb，BTN 是一名爱宽 3-bet 的玩家，他 3-bet 到 9bb，你持有 A♣Q♦。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb"],
+      "answer": 2,
+      "explanation": "4-bet 到 20bb。同一手 AQo，对手换成宽 3-bet 就成为标准 4-bet 诈唬：A 阻挡了对手的 AA/AK 组合，让他可继续的强牌变少，且能立刻赢下约 14bb 死钱（规则 R4）。尺度 20bb 约为 9bb 的 2.2 倍（规则 R5）；跟注被主导、弃牌则放弃反制宽 3-bet 的机会（规则 R1）。",
+      "ruleRefs": ["p1-u10-R4", "p1-u10-R5", "p1-u10-R1"],
+      "kp": "dominated-fold"
+    },
+    {
+      "id": "p1-u10-q08",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 MP 开池到 2.5bb，CO 3-bet 到 9bb，你持有 A♥K♥ 并决定做 4-bet。下注多少合适？",
+      "options": ["13bb（约 1.4 倍）", "16bb（约 1.8 倍）", "20bb（约 2.2 倍）", "30bb（约 3.3 倍）"],
+      "answer": 2,
+      "explanation": "20bb（约 2.2 倍）。4-bet 尺度为对方 3-bet 额的 2.2–2.5 倍：9bb 对应 19.8–22.5bb，只有 20bb 落在区间内（规则 R5）。13–16bb 过小，给对手用跟注甚至反加来惩罚你的便宜选择；30bb 过大，一旦对手全下你将被迫在套池前做决定。",
+      "ruleRefs": ["p1-u10-R5"],
+      "kp": "4bet-size"
+    },
+    {
+      "id": "p1-u10-q09",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 150bb（深筹码）。你从 MP 开池到 2.5bb，CO 的紧手玩家 3-bet 到 9bb，你持有 K♠K♥。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb"],
+      "answer": 1,
+      "explanation": "跟注 9bb。KK 永不弃给单次 3-bet，弃牌首先排除（规则 R2）。4-bet 是默认主要打法，但 150bb 深筹码面对紧 3-bet，跟注慢打能隐藏牌力、保留对手全部诈唬与更差超对，是规则 R2 明确允许的混合分支——本题考察的正是这个慢打分支。",
+      "ruleRefs": ["p1-u10-R2"],
+      "kp": "4bet-value"
+    },
+    {
+      "id": "p1-u10-q10",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 CO 开池到 2.5bb，BTN 是爱宽 3-bet 的玩家，他 3-bet 到 9bb，你持有 K♠J♠。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb"],
+      "answer": 1,
+      "explanation": "跟注 9bb。对手宽 3-bet，你的继续范围随之放宽：ATs/KJs/QJs 进入跟注带（规则 R1：对手越宽你越宽）。KJs 同花可玩性好，面对宽范围 Equity 足够；若对手是紧 3-bet 这手牌要弃——对手宽度决定答案。",
+      "ruleRefs": ["p1-u10-R1"],
+      "kp": "continue-range"
+    },
+    {
+      "id": "p1-u10-q11",
+      "type": "single",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 HJ 开池到 2.5bb，CO 的紧手玩家 3-bet 到 9bb，你持有 Q♠Q♥。如何行动？",
+      "options": ["弃牌", "跟注 9bb", "4-bet 到 20bb"],
+      "answer": 2,
+      "explanation": "4-bet 到 20bb。QQ 永不弃给单次 3-bet，100bb 标准深度下 4-bet 打价值为主（规则 R2）：让 JJ/TT 与 AK 支付，也避免翻后高对难打三 streets。20bb 约为 9bb 的 2.2 倍（规则 R5）；跟注慢打是深筹码才有的混合选项。",
+      "ruleRefs": ["p1-u10-R2", "p1-u10-R5"],
+      "kp": "4bet-value"
+    },
+    {
+      "id": "p1-u10-q12",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 MP 开池到 2.5bb，CO 是知名紧手，他 3-bet 到 9bb，其 3-bet 范围紧如 UTG 开池范围（约前 5%）。你持有以下哪些手牌应该继续？（多选，继续含跟注与 4-bet）",
+      "options": ["A♦K♣", "Q♦Q♣", "T♣T♦", "A♠Q♠", "K♠Q♠", "A♠J♠", "6♦6♣", "A♣Q♥"],
+      "answer": [0, 1, 2, 3, 4, 5],
+      "explanation": "前六项都应继续：A♦K♣ 与 Q♦Q♣ 永不弃、4-bet 打价值为主（规则 R2）；T♣T♦ 属 JJ–99 中对子，主要跟注（规则 R3）；A♠Q♠、K♠Q♠、A♠J♠ 属同花强高张，vs 紧 3-bet 跟注（规则 R1）。后两项应弃：6♦6♣ 小对子无位置面对紧 3-bet 直接弃（规则 R3）；A♣Q♥ 被主导牌 vs 紧 3-bet 弃（规则 R4）。",
+      "ruleRefs": ["p1-u10-R1", "p1-u10-R2", "p1-u10-R3", "p1-u10-R4"],
+      "kp": "continue-range"
+    },
+    {
+      "id": "p1-u10-q13",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 MP 开池到 2.5bb，CO 是知名紧手，他 3-bet 到 9bb，其 3-bet 范围紧如 UTG 开池范围（约前 5%）。你持有以下哪些手牌应该弃牌？（多选）",
+      "options": ["A♥Q♦", "K♦Q♥", "A♥J♦", "Q♦J♥", "5♣5♦", "4♠4♣", "T♠T♥", "K♥Q♥"],
+      "answer": [0, 1, 2, 3, 4, 5],
+      "explanation": "前六项都应弃：A♥Q♦、K♦Q♥、A♥J♦、Q♦J♥ 均为被主导牌，vs 紧 3-bet 找不到安全翻后路径（规则 R4）；5♣5♦、4♠4♣ 小对子无位置面对紧 3-bet，赔率不够直接弃（规则 R3）。后两项不应弃：T♠T♥ 中对子主要跟注（规则 R3），K♥Q♥ 同花强高张跟注（规则 R1）。",
+      "ruleRefs": ["p1-u10-R4", "p1-u10-R3", "p1-u10-R1"],
+      "kp": "oop-tighten"
+    },
+    {
+      "id": "p1-u10-q14",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 CO 开池到 2.5bb，BTN 是习惯性宽 3-bet 的玩家，他 3-bet 到 9bb。你持有以下哪些手牌应该继续？（多选，继续含跟注与 4-bet）",
+      "options": ["A♣K♥", "J♠J♦", "9♣9♦", "A♠T♠", "K♥J♥", "Q♠J♠", "7♦7♣", "9♦8♣"],
+      "answer": [0, 1, 2, 3, 4, 5],
+      "explanation": "前六项都应继续：A♣K♥ 4-bet 打价值（规则 R2）；J♠J♦、9♣9♦ 中对子跟注（规则 R3）；A♠T♠、K♥J♥、Q♠J♠ 是宽 3-bet 下的放宽跟注带（规则 R1：对手越宽你越宽）。后两项应弃：7♦7♣ 小对子无位置弃（规则 R3）；9♦8♣ 连张未达放宽跟注门槛（规则 R1）。",
+      "ruleRefs": ["p1-u10-R1", "p1-u10-R2", "p1-u10-R3"],
+      "kp": "continue-range"
+    },
+    {
+      "id": "p1-u10-q15",
+      "type": "multi",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你从 BTN 开池到 2.5bb，BB 是爱宽 3-bet 的玩家，他 3-bet 到 10bb。你持有以下哪些手牌适合做 4-bet 诈唬？（多选）",
+      "options": ["A♦J♥", "K♣Q♦", "A♦Q♣", "A♥T♦", "K♣Q♣", "8♠8♦", "5♥5♣", "K♠9♠"],
+      "answer": [0, 1, 2, 3],
+      "explanation": "前四项适合做 4-bet 诈唬：A♦J♥、K♣Q♦、A♦Q♣、A♥T♦ 都有 A/K 阻挡，削减对手 AA/AK 的继续组合，且牌力不足以跟注，vs 宽 3-bet 是标准诈唬（规则 R4），尺度约 10bb 的 2.2–2.5 倍即 22–25bb（规则 R5）。后四项不是诈唬牌：K♣Q♣、8♠8♦、5♥5♣ 牌力够跟注，应与诈唬区分开（规则 R1、规则 R3）；K♠9♠ 太弱直接弃（规则 R1）。",
+      "ruleRefs": ["p1-u10-R4", "p1-u10-R5", "p1-u10-R1", "p1-u10-R3"],
+      "kp": "dominated-fold"
+    },
+    {
+      "id": "p1-u10-q16",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你在 BTN 开池到 2.5bb，BB 是爱宽 3-bet 的玩家，他 3-bet 到 10bb，你手持 Q♠Q♦。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-bb-3bet",
+      "hand": "QQ",
+      "answer": "fourbet",
+      "explanation": "4-bet。QQ 永不弃给单次 3-bet（规则 R2），100bb 标准深度以 4-bet 打价值为主：让对手的 JJ/TT 与 AK 支付，也避免翻后高对难打三条街。尺度取 10bb 的 2.2–2.5 倍即 22–25bb（规则 R5）。",
+      "ruleRefs": ["p1-u10-R2", "p1-u10-R5"],
+      "kp": "vs-3bet-range"
+    },
+    {
+      "id": "p1-u10-q17",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你在 BTN 开池到 2.5bb，BB 是爱宽 3-bet 的玩家，他 3-bet 到 10bb，你手持 T♥T♦。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-bb-3bet",
+      "hand": "TT",
+      "answer": "call",
+      "explanation": "跟注。TT 属 JJ–99 中对子，主要跟注（规则 R3）：4-bet 只逼走更差的牌、把更强的继续范围粘进来，跟注则保留 BB 宽 3-bet 里的全部诈唬与更差对子。你在 BTN 有位置，翻后实现 Equity 的效率高（规则 R1）。",
+      "ruleRefs": ["p1-u10-R3", "p1-u10-R1"],
+      "kp": "vs-3bet-range"
+    },
+    {
+      "id": "p1-u10-q18",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你在 BTN 开池到 2.5bb，BB 是爱宽 3-bet 的玩家，他 3-bet 到 10bb，你手持 Q♦J♥。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-bb-3bet",
+      "hand": "QJo",
+      "answer": "fold",
+      "explanation": "弃牌。QJo 是被主导牌，且没有 A/K 阻挡进不了 4-bet 诈唬腿（规则 R4：诈唬腿专挑带 A/K 阻挡的 AQo/AJo/ATo/KQo）；牌力又不足以跟注宽 3-bet，只能弃。对照同一牌面的 QJs 在跟注腿里——是否同花决定这手牌的命运（规则 R1）。",
+      "ruleRefs": ["p1-u10-R4", "p1-u10-R1"],
+      "kp": "vs-3bet-range"
+    },
+    {
+      "id": "p1-u10-q19",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你在 BTN 开池到 2.5bb，BB 是爱宽 3-bet 的玩家，他 3-bet 到 10bb，你手持 A♠T♠。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-bb-3bet",
+      "hand": "ATs",
+      "answer": "call",
+      "explanation": "跟注。这是“跟注 vs 4-bet”的分界牌：同花 ATs 落在放宽跟注带里（规则 R1：vs 宽 3-bet 放宽到 ATs/KJs/QJs），同花的可玩性让它值得看翻牌；同一牌面的 ATo 牌力不足以跟注、但带 A 阻挡，转而进入 4-bet 诈唬腿（规则 R4）。点格子时对照这两格，体会同花与非同花的分流。",
+      "ruleRefs": ["p1-u10-R1", "p1-u10-R4"],
+      "kp": "vs-3bet-range"
+    },
+    {
+      "id": "p1-u10-q20",
+      "type": "range",
+      "scenario": "6 人桌现金局，有效筹码 100bb。你在 BTN 开池到 2.5bb，BB 是爱宽 3-bet 的玩家，他 3-bet 到 10bb，你手持 A♣Q♦。在范围表中点选这手牌的标准行动。",
+      "spot": "btn-vs-bb-3bet",
+      "hand": "AQo",
+      "answer": "fourbet",
+      "explanation": "4-bet 诈唬。AQo 牌力不足以跟注宽 3-bet，但 A 阻挡把对手 AA 从 6 种压到 3 种、AK 从 16 种压到 12 种，是规则 R4 点名的反制宽 3-bet 的标准诈唬腿，能立刻收下约 13bb 底池。尺度 22–25bb（10bb 的 2.2–2.5 倍，规则 R5）。注意 vs 紧 3-bet 这手牌是弃牌——永远先给对手的 3-bet 宽度定档（规则 R1）。",
+      "ruleRefs": ["p1-u10-R4", "p1-u10-R5", "p1-u10-R1"],
+      "kp": "vs-3bet-range"
+    }
+  ]
+}
